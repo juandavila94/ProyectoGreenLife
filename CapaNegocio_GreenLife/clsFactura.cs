@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CapaNegocio_GreenLife
 {
-    public class Factura
+    public class clsFactura
     {
         private int idFactura;
 

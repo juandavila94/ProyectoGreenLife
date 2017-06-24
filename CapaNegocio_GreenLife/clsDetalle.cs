@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CapaNegocio_GreenLife
 {
-    public class Detalle
+    public class clsDetalle
     {
         private int idDetalle;
 

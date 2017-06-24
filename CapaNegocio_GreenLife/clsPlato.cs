@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+
 namespace CapaNegocio_GreenLife
 {
-    public class Usuario
+    public class clsPlato
     {
         private int id;
 
@@ -14,13 +15,6 @@ namespace CapaNegocio_GreenLife
             get { return id; }
             set { id = value; }
         }
-        private string usuario;
-
-        public string Usuario1
-        {
-            get { return usuario; }
-            set { usuario = value; }
-        }
         private string nombre;
 
         public string Nombre
@@ -28,21 +22,20 @@ namespace CapaNegocio_GreenLife
             get { return nombre; }
             set { nombre = value; }
         }
-        private string password;
+        private decimal precio;
 
-        public string Password
+        public decimal Precio
         {
-            get { return password; }
-            set { password = value; }
+            get { return precio; }
+            set { precio = value; }
         }
-        private int rol;
+        private string tipo;
 
-        public int Rol
+        public string Tipo
         {
-            get { return rol; }
-            set { rol = value; }
+            get { return tipo; }
+            set { tipo = value; }
         }
-
-
+        
     }
 }
