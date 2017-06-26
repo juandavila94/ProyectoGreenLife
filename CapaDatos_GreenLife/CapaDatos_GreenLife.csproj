@@ -55,6 +55,7 @@
       <DependentUpon>modeloBase.tt</DependentUpon>
     </Compile>
     <Compile Include="clsDatosCliente.cs" />
+    <Compile Include="clsDatosPlato.cs" />
     <Compile Include="clsDatosUsuario.cs" />
     <Compile Include="Detalle.cs">
       <DependentUpon>modeloBase.tt</DependentUpon>
