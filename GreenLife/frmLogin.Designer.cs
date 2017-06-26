@@ -32,19 +32,21 @@
             this.lblContrsena = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.mskContrsena = new System.Windows.Forms.MaskedTextBox();
-            this.picIngresar = new System.Windows.Forms.PictureBox();
             this.btnIngresar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.picIngresar)).BeginInit();
+            this.btnIngresarLogin = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(36, 53);
+            this.lblUsuario.Font = new System.Drawing.Font("Berlin Sans FB", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.ForeColor = System.Drawing.Color.White;
+            this.lblUsuario.Location = new System.Drawing.Point(64, 203);
             this.lblUsuario.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(116, 31);
+            this.lblUsuario.Size = new System.Drawing.Size(130, 37);
             this.lblUsuario.TabIndex = 0;
             this.lblUsuario.Text = "Usuario:";
             this.lblUsuario.Click += new System.EventHandler(this.lblUsuario_Click);
@@ -52,11 +54,12 @@
             // lblContrsena
             // 
             this.lblContrsena.AutoSize = true;
-            this.lblContrsena.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContrsena.Location = new System.Drawing.Point(36, 125);
+            this.lblContrsena.Font = new System.Drawing.Font("Berlin Sans FB", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContrsena.ForeColor = System.Drawing.Color.White;
+            this.lblContrsena.Location = new System.Drawing.Point(10, 282);
             this.lblContrsena.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblContrsena.Name = "lblContrsena";
-            this.lblContrsena.Size = new System.Drawing.Size(163, 31);
+            this.lblContrsena.Size = new System.Drawing.Size(184, 37);
             this.lblContrsena.TabIndex = 1;
             this.lblContrsena.Text = "Contraseña:";
             // 
@@ -64,35 +67,22 @@
             // 
             this.txtUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(228, 46);
+            this.txtUsuario.Location = new System.Drawing.Point(226, 203);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(276, 38);
+            this.txtUsuario.Size = new System.Drawing.Size(337, 46);
             this.txtUsuario.TabIndex = 1;
             // 
             // mskContrsena
             // 
             this.mskContrsena.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.mskContrsena.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskContrsena.Location = new System.Drawing.Point(228, 125);
+            this.mskContrsena.Location = new System.Drawing.Point(226, 282);
             this.mskContrsena.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.mskContrsena.Name = "mskContrsena";
             this.mskContrsena.PasswordChar = '*';
-            this.mskContrsena.Size = new System.Drawing.Size(276, 38);
+            this.mskContrsena.Size = new System.Drawing.Size(337, 46);
             this.mskContrsena.TabIndex = 2;
-            // 
-            // picIngresar
-            // 
-            this.picIngresar.Image = global::GreenLife.Properties.Resources.ingresar;
-            this.picIngresar.Location = new System.Drawing.Point(150, 191);
-            this.picIngresar.Margin = new System.Windows.Forms.Padding(4);
-            this.picIngresar.Name = "picIngresar";
-            this.picIngresar.Size = new System.Drawing.Size(354, 132);
-            this.picIngresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picIngresar.TabIndex = 4;
-            this.picIngresar.TabStop = false;
-            this.picIngresar.Tag = "Ingresar al Sistema";
-            this.picIngresar.Click += new System.EventHandler(this.picIngresar_Click);
             // 
             // btnIngresar
             // 
@@ -104,15 +94,40 @@
             this.btnIngresar.UseVisualStyleBackColor = true;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
+            // btnIngresarLogin
+            // 
+            this.btnIngresarLogin.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnIngresarLogin.Font = new System.Drawing.Font("Berlin Sans FB", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngresarLogin.ForeColor = System.Drawing.Color.White;
+            this.btnIngresarLogin.Location = new System.Drawing.Point(226, 378);
+            this.btnIngresarLogin.Name = "btnIngresarLogin";
+            this.btnIngresarLogin.Size = new System.Drawing.Size(337, 83);
+            this.btnIngresarLogin.TabIndex = 4;
+            this.btnIngresarLogin.Text = "INGRESAR";
+            this.btnIngresarLogin.UseVisualStyleBackColor = false;
+            this.btnIngresarLogin.Click += new System.EventHandler(this.btnIngresarLogin_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Image = global::GreenLife.Properties.Resources.logo3;
+            this.pictureBox1.Location = new System.Drawing.Point(226, 21);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(337, 162);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmLogin
             // 
             this.AcceptButton = this.btnIngresar;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(20F, 39F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(563, 360);
+            this.BackColor = System.Drawing.Color.Indigo;
+            this.ClientSize = new System.Drawing.Size(751, 536);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnIngresarLogin);
             this.Controls.Add(this.btnIngresar);
-            this.Controls.Add(this.picIngresar);
             this.Controls.Add(this.mskContrsena);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lblContrsena);
@@ -123,7 +138,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LOGIN   GREEN LIFE";
             this.Load += new System.EventHandler(this.frmLogin_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picIngresar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,7 +150,8 @@
         private System.Windows.Forms.Label lblContrsena;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.MaskedTextBox mskContrsena;
-        private System.Windows.Forms.PictureBox picIngresar;
         private System.Windows.Forms.Button btnIngresar;
+        private System.Windows.Forms.Button btnIngresarLogin;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

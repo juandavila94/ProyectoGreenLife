@@ -1,0 +1,790 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="GreenlifeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="idCliente" />
+          </Key>
+          <Property Name="idCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cedula" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="direccion" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="telefono" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Detalle">
+          <Key>
+            <PropertyRef Name="idDetalle" />
+          </Key>
+          <Property Name="idDetalle" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idFactura" Type="int" Nullable="false" />
+          <Property Name="idPlato" Type="int" Nullable="false" />
+          <Property Name="cantidad" Type="int" Nullable="false" />
+          <Property Name="precio" Type="decimal" Precision="20" Scale="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Factura">
+          <Key>
+            <PropertyRef Name="idFactura" />
+          </Key>
+          <Property Name="idFactura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idUsuario" Type="int" />
+          <Property Name="idCliente" Type="int" Nullable="false" />
+          <Property Name="fecha" Type="date" Nullable="false" />
+          <Property Name="metodoDePago" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="subtotal" Type="decimal" Precision="20" Scale="15" Nullable="false" />
+          <Property Name="iva" Type="decimal" Precision="20" Scale="15" Nullable="false" />
+          <Property Name="total" Type="decimal" Precision="20" Scale="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Plato">
+          <Key>
+            <PropertyRef Name="idPlato" />
+          </Key>
+          <Property Name="idPlato" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="precio" Type="decimal" Precision="20" Scale="15" Nullable="false" />
+          <Property Name="tipo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="foto" Type="image" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="usuario" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="rol" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Detalle_Factura">
+          <End Role="Factura" Type="Self.Factura" Multiplicity="1" />
+          <End Role="Detalle" Type="Self.Detalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Factura">
+              <PropertyRef Name="idFactura" />
+            </Principal>
+            <Dependent Role="Detalle">
+              <PropertyRef Name="idFactura" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Detalle_Plato">
+          <End Role="Plato" Type="Self.Plato" Multiplicity="1" />
+          <End Role="Detalle" Type="Self.Detalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Plato">
+              <PropertyRef Name="idPlato" />
+            </Principal>
+            <Dependent Role="Detalle">
+              <PropertyRef Name="idPlato" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Factura_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Factura" Type="Self.Factura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="idCliente" />
+            </Principal>
+            <Dependent Role="Factura">
+              <PropertyRef Name="idCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Factura_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Factura" Type="Self.Factura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="Factura">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="spConsultarClientes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spConsultarClientesPorCedula" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cedula" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spConsultarClientesPorNombre" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spConsultarFacturacionDiaria" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fecha" Type="date" Mode="In" />
+        </Function>
+        <Function Name="spConsultarFacturasDia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fecha" Type="date" Mode="In" />
+        </Function>
+        <Function Name="spConsultarFacturasPorCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idCliente" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spConsultarFacturasPorUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idUsuario" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spConsultarPlatos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spConsultarPlatosPorNombre" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spConsultarPlatosPorTipo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tipo" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spConsultarTotalFacturasDia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fecha" Type="date" Mode="In" />
+        </Function>
+        <Function Name="spConsultarTotalFacturasMes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="mes" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spConsultarTotalFacturasPorMetodoDia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fecha" Type="date" Mode="In" />
+          <Parameter Name="metodoPago" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spConsultarUsuarioPorNombre" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spConsultarUsuarios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spEliminarCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cedula" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spEliminarPlato" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spEliminarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="usuario" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spInsertarCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cedula" Type="varchar" Mode="In" />
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+          <Parameter Name="direccion" Type="varchar" Mode="In" />
+          <Parameter Name="telefono" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spInsertarDetalle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idFactura" Type="int" Mode="In" />
+          <Parameter Name="idPlato" Type="int" Mode="In" />
+          <Parameter Name="cantidad" Type="int" Mode="In" />
+          <Parameter Name="precio" Type="decimal" Mode="In" />
+        </Function>
+        <Function Name="spInsertarFactura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idUsuario" Type="int" Mode="In" />
+          <Parameter Name="idCliente" Type="int" Mode="In" />
+          <Parameter Name="fecha" Type="date" Mode="In" />
+          <Parameter Name="metodoDePago" Type="varchar" Mode="In" />
+          <Parameter Name="subtotal" Type="decimal" Mode="In" />
+          <Parameter Name="iva" Type="decimal" Mode="In" />
+          <Parameter Name="total" Type="decimal" Mode="In" />
+        </Function>
+        <Function Name="spInsertarPlato" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+          <Parameter Name="precio" Type="money" Mode="In" />
+          <Parameter Name="tipo" Type="varchar" Mode="In" />
+          <Parameter Name="foto" Type="image" Mode="In" />
+        </Function>
+        <Function Name="spInsertarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="usuario" Type="varchar" Mode="In" />
+          <Parameter Name="password" Type="varchar" Mode="In" />
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+          <Parameter Name="rol" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spModificarCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="cedulaNueva" Type="varchar" Mode="In" />
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+          <Parameter Name="direccion" Type="varchar" Mode="In" />
+          <Parameter Name="telefono" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spModificarPlato" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+          <Parameter Name="precio" Type="money" Mode="In" />
+          <Parameter Name="tipo" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spModificarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idUsuario" Type="int" Mode="In" />
+          <Parameter Name="usuario" Type="varchar" Mode="In" />
+          <Parameter Name="password" Type="varchar" Mode="In" />
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+          <Parameter Name="rol" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="GreenlifeModelStoreContainer">
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Detalle" EntityType="Self.Detalle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Factura" EntityType="Self.Factura" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Plato" EntityType="Self.Plato" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Detalle_Factura" Association="Self.FK_Detalle_Factura">
+            <End Role="Factura" EntitySet="Factura" />
+            <End Role="Detalle" EntitySet="Detalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Detalle_Plato" Association="Self.FK_Detalle_Plato">
+            <End Role="Plato" EntitySet="Plato" />
+            <End Role="Detalle" EntitySet="Detalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Factura_Cliente" Association="Self.FK_Factura_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Factura" EntitySet="Factura" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Factura_Usuario" Association="Self.FK_Factura_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Factura" EntitySet="Factura" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GreenlifeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="idCliente" />
+          </Key>
+          <Property Name="idCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cedula" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="telefono" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Factura" Relationship="Self.FK_Factura_Cliente" FromRole="Cliente" ToRole="Factura" />
+        </EntityType>
+        <EntityType Name="Detalle">
+          <Key>
+            <PropertyRef Name="idDetalle" />
+          </Key>
+          <Property Name="idDetalle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idFactura" Type="Int32" Nullable="false" />
+          <Property Name="idPlato" Type="Int32" Nullable="false" />
+          <Property Name="cantidad" Type="Int32" Nullable="false" />
+          <Property Name="precio" Type="Decimal" Precision="20" Scale="15" Nullable="false" />
+          <NavigationProperty Name="Factura" Relationship="Self.FK_Detalle_Factura" FromRole="Detalle" ToRole="Factura" />
+          <NavigationProperty Name="Plato" Relationship="Self.FK_Detalle_Plato" FromRole="Detalle" ToRole="Plato" />
+        </EntityType>
+        <EntityType Name="Factura">
+          <Key>
+            <PropertyRef Name="idFactura" />
+          </Key>
+          <Property Name="idFactura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idUsuario" Type="Int32" />
+          <Property Name="idCliente" Type="Int32" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="metodoDePago" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="subtotal" Type="Decimal" Precision="20" Scale="15" Nullable="false" />
+          <Property Name="iva" Type="Decimal" Precision="20" Scale="15" Nullable="false" />
+          <Property Name="total" Type="Decimal" Precision="20" Scale="15" Nullable="false" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FK_Factura_Cliente" FromRole="Factura" ToRole="Cliente" />
+          <NavigationProperty Name="Detalle" Relationship="Self.FK_Detalle_Factura" FromRole="Factura" ToRole="Detalle" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK_Factura_Usuario" FromRole="Factura" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Plato">
+          <Key>
+            <PropertyRef Name="idPlato" />
+          </Key>
+          <Property Name="idPlato" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="precio" Type="Decimal" Precision="20" Scale="15" Nullable="false" />
+          <Property Name="tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="foto" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Detalle" Relationship="Self.FK_Detalle_Plato" FromRole="Plato" ToRole="Detalle" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="usuario1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rol" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Factura" Relationship="Self.FK_Factura_Usuario" FromRole="Usuario" ToRole="Factura" />
+        </EntityType>
+        <Association Name="FK_Factura_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Factura" Type="Self.Factura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="idCliente" />
+            </Principal>
+            <Dependent Role="Factura">
+              <PropertyRef Name="idCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Detalle_Factura">
+          <End Role="Factura" Type="Self.Factura" Multiplicity="1" />
+          <End Role="Detalle" Type="Self.Detalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Factura">
+              <PropertyRef Name="idFactura" />
+            </Principal>
+            <Dependent Role="Detalle">
+              <PropertyRef Name="idFactura" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Detalle_Plato">
+          <End Role="Plato" Type="Self.Plato" Multiplicity="1" />
+          <End Role="Detalle" Type="Self.Detalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Plato">
+              <PropertyRef Name="idPlato" />
+            </Principal>
+            <Dependent Role="Detalle">
+              <PropertyRef Name="idPlato" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Factura_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Factura" Type="Self.Factura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="Factura">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GreenlifeEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" />
+          <EntitySet Name="Detalle" EntityType="Self.Detalle" />
+          <EntitySet Name="Factura" EntityType="Self.Factura" />
+          <EntitySet Name="Plato" EntityType="Self.Plato" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+          <AssociationSet Name="FK_Factura_Cliente" Association="Self.FK_Factura_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Factura" EntitySet="Factura" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Detalle_Factura" Association="Self.FK_Detalle_Factura">
+            <End Role="Factura" EntitySet="Factura" />
+            <End Role="Detalle" EntitySet="Detalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Detalle_Plato" Association="Self.FK_Detalle_Plato">
+            <End Role="Plato" EntitySet="Plato" />
+            <End Role="Detalle" EntitySet="Detalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Factura_Usuario" Association="Self.FK_Factura_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Factura" EntitySet="Factura" />
+          </AssociationSet>
+          <FunctionImport Name="spConsultarClientes" ReturnType="Collection(GreenlifeModel.spConsultarClientes_Result)" />
+          <FunctionImport Name="spConsultarClientesPorCedula" ReturnType="Collection(GreenlifeModel.spConsultarClientesPorCedula_Result)">
+          <Parameter Name="cedula" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spConsultarClientesPorNombre" ReturnType="Collection(GreenlifeModel.spConsultarClientesPorNombre_Result)">
+          <Parameter Name="nombre" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spConsultarFacturacionDiaria" ReturnType="Collection(Decimal)">
+          <Parameter Name="fecha" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="spConsultarFacturasDia" ReturnType="Collection(GreenlifeModel.spConsultarFacturasDia_Result)">
+          <Parameter Name="fecha" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="spConsultarFacturasPorCliente" ReturnType="Collection(GreenlifeModel.spConsultarFacturasPorCliente_Result)">
+          <Parameter Name="idCliente" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spConsultarFacturasPorUsuario" ReturnType="Collection(GreenlifeModel.spConsultarFacturasPorUsuario_Result)">
+          <Parameter Name="idUsuario" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spConsultarPlatos" ReturnType="Collection(GreenlifeModel.spConsultarPlatos_Result)" />
+          <FunctionImport Name="spConsultarPlatosPorNombre" ReturnType="Collection(GreenlifeModel.spConsultarPlatosPorNombre_Result)">
+          <Parameter Name="nombre" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spConsultarPlatosPorTipo" ReturnType="Collection(GreenlifeModel.spConsultarPlatosPorTipo_Result)">
+          <Parameter Name="tipo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spConsultarTotalFacturasDia" ReturnType="Collection(Decimal)">
+          <Parameter Name="fecha" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="spConsultarTotalFacturasMes" ReturnType="Collection(Decimal)">
+          <Parameter Name="mes" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spConsultarTotalFacturasPorMetodoDia" ReturnType="Collection(Decimal)">
+            <Parameter Name="fecha" Mode="In" Type="DateTime" />
+            <Parameter Name="metodoPago" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spConsultarUsuarioPorNombre" ReturnType="Collection(GreenlifeModel.spConsultarUsuarioPorNombre_Result)">
+          <Parameter Name="nombre" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spConsultarUsuarios" ReturnType="Collection(GreenlifeModel.spConsultarUsuarios_Result)" />
+          <FunctionImport Name="spEliminarCliente">
+          <Parameter Name="cedula" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spEliminarPlato">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spEliminarUsuario">
+          <Parameter Name="usuario" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spInsertarCliente">
+            <Parameter Name="cedula" Mode="In" Type="String" />
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="direccion" Mode="In" Type="String" />
+            <Parameter Name="telefono" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spInsertarDetalle">
+            <Parameter Name="idFactura" Mode="In" Type="Int32" />
+            <Parameter Name="idPlato" Mode="In" Type="Int32" />
+            <Parameter Name="cantidad" Mode="In" Type="Int32" />
+            <Parameter Name="precio" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="spInsertarFactura">
+            <Parameter Name="idUsuario" Mode="In" Type="Int32" />
+            <Parameter Name="idCliente" Mode="In" Type="Int32" />
+            <Parameter Name="fecha" Mode="In" Type="DateTime" />
+            <Parameter Name="metodoDePago" Mode="In" Type="String" />
+            <Parameter Name="subtotal" Mode="In" Type="Decimal" />
+            <Parameter Name="iva" Mode="In" Type="Decimal" />
+            <Parameter Name="total" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="spInsertarPlato">
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="precio" Mode="In" Type="Decimal" />
+            <Parameter Name="tipo" Mode="In" Type="String" />
+            <Parameter Name="foto" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="spInsertarUsuario">
+            <Parameter Name="usuario" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="rol" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spModificarCliente">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="cedulaNueva" Mode="In" Type="String" />
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="direccion" Mode="In" Type="String" />
+            <Parameter Name="telefono" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spModificarPlato">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="precio" Mode="In" Type="Decimal" />
+            <Parameter Name="tipo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spModificarUsuario">
+            <Parameter Name="idUsuario" Mode="In" Type="Int32" />
+            <Parameter Name="usuario" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="rol" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="spConsultarClientes_Result">
+          <Property Type="Int32" Name="idCliente" Nullable="false" />
+          <Property Type="String" Name="cedula" Nullable="false" MaxLength="13" />
+          <Property Type="String" Name="nombre" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="direccion" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="telefono" Nullable="false" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="spConsultarClientesPorCedula_Result">
+          <Property Type="Int32" Name="idCliente" Nullable="false" />
+          <Property Type="String" Name="cedula" Nullable="false" MaxLength="13" />
+          <Property Type="String" Name="nombre" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="direccion" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="telefono" Nullable="false" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="spConsultarClientesPorNombre_Result">
+          <Property Type="Int32" Name="idCliente" Nullable="false" />
+          <Property Type="String" Name="cedula" Nullable="false" MaxLength="13" />
+          <Property Type="String" Name="nombre" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="direccion" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="telefono" Nullable="false" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="spConsultarFacturasDia_Result">
+          <Property Type="Int32" Name="idFactura" Nullable="false" />
+          <Property Type="Int32" Name="idUsuario" Nullable="true" />
+          <Property Type="Int32" Name="idCliente" Nullable="false" />
+          <Property Type="DateTime" Name="fecha" Nullable="false" />
+          <Property Type="String" Name="metodoDePago" Nullable="false" MaxLength="50" />
+          <Property Type="Decimal" Name="subtotal" Nullable="false" Precision="20" Scale="15" />
+          <Property Type="Decimal" Name="iva" Nullable="false" Precision="20" Scale="15" />
+          <Property Type="Decimal" Name="total" Nullable="false" Precision="20" Scale="15" />
+        </ComplexType>
+        <ComplexType Name="spConsultarFacturasPorCliente_Result">
+          <Property Type="Int32" Name="idFactura" Nullable="false" />
+          <Property Type="Int32" Name="idUsuario" Nullable="true" />
+          <Property Type="Int32" Name="idCliente" Nullable="false" />
+          <Property Type="DateTime" Name="fecha" Nullable="false" />
+          <Property Type="String" Name="metodoDePago" Nullable="false" MaxLength="50" />
+          <Property Type="Decimal" Name="subtotal" Nullable="false" Precision="20" Scale="15" />
+          <Property Type="Decimal" Name="iva" Nullable="false" Precision="20" Scale="15" />
+          <Property Type="Decimal" Name="total" Nullable="false" Precision="20" Scale="15" />
+        </ComplexType>
+        <ComplexType Name="spConsultarFacturasPorUsuario_Result">
+          <Property Type="Int32" Name="idFactura" Nullable="false" />
+          <Property Type="Int32" Name="idUsuario" Nullable="true" />
+          <Property Type="Int32" Name="idCliente" Nullable="false" />
+          <Property Type="DateTime" Name="fecha" Nullable="false" />
+          <Property Type="String" Name="metodoDePago" Nullable="false" MaxLength="50" />
+          <Property Type="Decimal" Name="subtotal" Nullable="false" Precision="20" Scale="15" />
+          <Property Type="Decimal" Name="iva" Nullable="false" Precision="20" Scale="15" />
+          <Property Type="Decimal" Name="total" Nullable="false" Precision="20" Scale="15" />
+        </ComplexType>
+        <ComplexType Name="spConsultarPlatos_Result">
+          <Property Type="Int32" Name="idPlato" Nullable="false" />
+          <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
+          <Property Type="Decimal" Name="precio" Nullable="false" Precision="20" Scale="15" />
+          <Property Type="String" Name="tipo" Nullable="false" MaxLength="50" />
+          <Property Type="Binary" Name="foto" Nullable="true" MaxLength="Max" />
+        </ComplexType>
+        <ComplexType Name="spConsultarPlatosPorNombre_Result">
+          <Property Type="Int32" Name="idPlato" Nullable="false" />
+          <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
+          <Property Type="Decimal" Name="precio" Nullable="false" Precision="20" Scale="15" />
+          <Property Type="String" Name="tipo" Nullable="false" MaxLength="50" />
+          <Property Type="Binary" Name="foto" Nullable="true" MaxLength="Max" />
+        </ComplexType>
+        <ComplexType Name="spConsultarPlatosPorTipo_Result">
+          <Property Type="Int32" Name="idPlato" Nullable="false" />
+          <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
+          <Property Type="Decimal" Name="precio" Nullable="false" Precision="20" Scale="15" />
+          <Property Type="String" Name="tipo" Nullable="false" MaxLength="50" />
+          <Property Type="Binary" Name="foto" Nullable="true" MaxLength="Max" />
+        </ComplexType>
+        <ComplexType Name="spConsultarUsuarioPorNombre_Result">
+          <Property Type="Int32" Name="idUsuario" Nullable="false" />
+          <Property Type="String" Name="usuario" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="password" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="nombre" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="rol" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="spConsultarUsuarios_Result">
+          <Property Type="Int32" Name="idUsuario" Nullable="false" />
+          <Property Type="String" Name="usuario" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="password" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="nombre" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="rol" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GreenlifeModelStoreContainer" CdmEntityContainer="GreenlifeEntities">
+          <EntitySetMapping Name="Cliente">
+            <EntityTypeMapping TypeName="GreenlifeModel.Cliente">
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="cedula" ColumnName="cedula" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Detalle">
+            <EntityTypeMapping TypeName="GreenlifeModel.Detalle">
+              <MappingFragment StoreEntitySet="Detalle">
+                <ScalarProperty Name="idDetalle" ColumnName="idDetalle" />
+                <ScalarProperty Name="idFactura" ColumnName="idFactura" />
+                <ScalarProperty Name="idPlato" ColumnName="idPlato" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Factura">
+            <EntityTypeMapping TypeName="GreenlifeModel.Factura">
+              <MappingFragment StoreEntitySet="Factura">
+                <ScalarProperty Name="idFactura" ColumnName="idFactura" />
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="metodoDePago" ColumnName="metodoDePago" />
+                <ScalarProperty Name="subtotal" ColumnName="subtotal" />
+                <ScalarProperty Name="iva" ColumnName="iva" />
+                <ScalarProperty Name="total" ColumnName="total" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Plato">
+            <EntityTypeMapping TypeName="GreenlifeModel.Plato">
+              <MappingFragment StoreEntitySet="Plato">
+                <ScalarProperty Name="idPlato" ColumnName="idPlato" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="foto" ColumnName="foto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="GreenlifeModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="usuario1" ColumnName="usuario" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="rol" ColumnName="rol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spConsultarClientes" FunctionName="GreenlifeModel.Store.spConsultarClientes">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GreenlifeModel.spConsultarClientes_Result">
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="cedula" ColumnName="cedula" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spConsultarClientesPorCedula" FunctionName="GreenlifeModel.Store.spConsultarClientesPorCedula">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GreenlifeModel.spConsultarClientesPorCedula_Result">
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="cedula" ColumnName="cedula" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spConsultarClientesPorNombre" FunctionName="GreenlifeModel.Store.spConsultarClientesPorNombre">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GreenlifeModel.spConsultarClientesPorNombre_Result">
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="cedula" ColumnName="cedula" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spConsultarFacturacionDiaria" FunctionName="GreenlifeModel.Store.spConsultarFacturacionDiaria" />
+          <FunctionImportMapping FunctionImportName="spConsultarFacturasDia" FunctionName="GreenlifeModel.Store.spConsultarFacturasDia">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GreenlifeModel.spConsultarFacturasDia_Result">
+                <ScalarProperty Name="idFactura" ColumnName="idFactura" />
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="metodoDePago" ColumnName="metodoDePago" />
+                <ScalarProperty Name="subtotal" ColumnName="subtotal" />
+                <ScalarProperty Name="iva" ColumnName="iva" />
+                <ScalarProperty Name="total" ColumnName="total" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spConsultarFacturasPorCliente" FunctionName="GreenlifeModel.Store.spConsultarFacturasPorCliente">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GreenlifeModel.spConsultarFacturasPorCliente_Result">
+                <ScalarProperty Name="idFactura" ColumnName="idFactura" />
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="metodoDePago" ColumnName="metodoDePago" />
+                <ScalarProperty Name="subtotal" ColumnName="subtotal" />
+                <ScalarProperty Name="iva" ColumnName="iva" />
+                <ScalarProperty Name="total" ColumnName="total" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spConsultarFacturasPorUsuario" FunctionName="GreenlifeModel.Store.spConsultarFacturasPorUsuario">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GreenlifeModel.spConsultarFacturasPorUsuario_Result">
+                <ScalarProperty Name="idFactura" ColumnName="idFactura" />
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="metodoDePago" ColumnName="metodoDePago" />
+                <ScalarProperty Name="subtotal" ColumnName="subtotal" />
+                <ScalarProperty Name="iva" ColumnName="iva" />
+                <ScalarProperty Name="total" ColumnName="total" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spConsultarPlatos" FunctionName="GreenlifeModel.Store.spConsultarPlatos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GreenlifeModel.spConsultarPlatos_Result">
+                <ScalarProperty Name="idPlato" ColumnName="idPlato" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="foto" ColumnName="foto" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spConsultarPlatosPorNombre" FunctionName="GreenlifeModel.Store.spConsultarPlatosPorNombre">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GreenlifeModel.spConsultarPlatosPorNombre_Result">
+                <ScalarProperty Name="idPlato" ColumnName="idPlato" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="foto" ColumnName="foto" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spConsultarPlatosPorTipo" FunctionName="GreenlifeModel.Store.spConsultarPlatosPorTipo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GreenlifeModel.spConsultarPlatosPorTipo_Result">
+                <ScalarProperty Name="idPlato" ColumnName="idPlato" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="foto" ColumnName="foto" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spConsultarTotalFacturasDia" FunctionName="GreenlifeModel.Store.spConsultarTotalFacturasDia" />
+          <FunctionImportMapping FunctionImportName="spConsultarTotalFacturasMes" FunctionName="GreenlifeModel.Store.spConsultarTotalFacturasMes" />
+          <FunctionImportMapping FunctionImportName="spConsultarTotalFacturasPorMetodoDia" FunctionName="GreenlifeModel.Store.spConsultarTotalFacturasPorMetodoDia" />
+          <FunctionImportMapping FunctionImportName="spConsultarUsuarioPorNombre" FunctionName="GreenlifeModel.Store.spConsultarUsuarioPorNombre">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GreenlifeModel.spConsultarUsuarioPorNombre_Result">
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="rol" ColumnName="rol" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spConsultarUsuarios" FunctionName="GreenlifeModel.Store.spConsultarUsuarios">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GreenlifeModel.spConsultarUsuarios_Result">
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="rol" ColumnName="rol" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spEliminarCliente" FunctionName="GreenlifeModel.Store.spEliminarCliente" />
+          <FunctionImportMapping FunctionImportName="spEliminarPlato" FunctionName="GreenlifeModel.Store.spEliminarPlato" />
+          <FunctionImportMapping FunctionImportName="spEliminarUsuario" FunctionName="GreenlifeModel.Store.spEliminarUsuario" />
+          <FunctionImportMapping FunctionImportName="spInsertarCliente" FunctionName="GreenlifeModel.Store.spInsertarCliente" />
+          <FunctionImportMapping FunctionImportName="spInsertarDetalle" FunctionName="GreenlifeModel.Store.spInsertarDetalle" />
+          <FunctionImportMapping FunctionImportName="spInsertarFactura" FunctionName="GreenlifeModel.Store.spInsertarFactura" />
+          <FunctionImportMapping FunctionImportName="spInsertarPlato" FunctionName="GreenlifeModel.Store.spInsertarPlato" />
+          <FunctionImportMapping FunctionImportName="spInsertarUsuario" FunctionName="GreenlifeModel.Store.spInsertarUsuario" />
+          <FunctionImportMapping FunctionImportName="spModificarCliente" FunctionName="GreenlifeModel.Store.spModificarCliente" />
+          <FunctionImportMapping FunctionImportName="spModificarPlato" FunctionName="GreenlifeModel.Store.spModificarPlato" />
+          <FunctionImportMapping FunctionImportName="spModificarUsuario" FunctionName="GreenlifeModel.Store.spModificarUsuario" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
