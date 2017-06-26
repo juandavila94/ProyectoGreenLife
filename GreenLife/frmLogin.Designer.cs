@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblContrsena = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
@@ -46,7 +47,7 @@
             this.lblUsuario.Location = new System.Drawing.Point(64, 203);
             this.lblUsuario.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(130, 37);
+            this.lblUsuario.Size = new System.Drawing.Size(103, 30);
             this.lblUsuario.TabIndex = 0;
             this.lblUsuario.Text = "Usuario:";
             this.lblUsuario.Click += new System.EventHandler(this.lblUsuario_Click);
@@ -59,7 +60,7 @@
             this.lblContrsena.Location = new System.Drawing.Point(10, 282);
             this.lblContrsena.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblContrsena.Name = "lblContrsena";
-            this.lblContrsena.Size = new System.Drawing.Size(184, 37);
+            this.lblContrsena.Size = new System.Drawing.Size(146, 30);
             this.lblContrsena.TabIndex = 1;
             this.lblContrsena.Text = "Contraseña:";
             // 
@@ -70,7 +71,7 @@
             this.txtUsuario.Location = new System.Drawing.Point(226, 203);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(337, 46);
+            this.txtUsuario.Size = new System.Drawing.Size(337, 38);
             this.txtUsuario.TabIndex = 1;
             // 
             // mskContrsena
@@ -81,7 +82,7 @@
             this.mskContrsena.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.mskContrsena.Name = "mskContrsena";
             this.mskContrsena.PasswordChar = '*';
-            this.mskContrsena.Size = new System.Drawing.Size(337, 46);
+            this.mskContrsena.Size = new System.Drawing.Size(337, 38);
             this.mskContrsena.TabIndex = 2;
             // 
             // btnIngresar
@@ -121,7 +122,7 @@
             // frmLogin
             // 
             this.AcceptButton = this.btnIngresar;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(20F, 39F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Indigo;
             this.ClientSize = new System.Drawing.Size(751, 536);
@@ -133,6 +134,7 @@
             this.Controls.Add(this.lblContrsena);
             this.Controls.Add(this.lblUsuario);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
