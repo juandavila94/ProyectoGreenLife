@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CapaDatos_GreenLife
 {
-    class clsDatosFactura
+    public class clsDatosFactura
     {
         GreenlifeEntities bd = new GreenlifeEntities();
         public void InsertarFactura(int idUsuario, int idCliente, DateTime fecha, string metodoDePago, decimal subtotal, decimal iva, decimal total )

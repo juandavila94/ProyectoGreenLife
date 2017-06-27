@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using CapaDatos_GreenLife;
 
 namespace CapaNegocio_GreenLife
 {
     public class clsFactura
     {
+        clsDatosFactura objDatosFactura = new clsDatosFactura();
+
         private int idFactura;
 
         public int IdFactura
@@ -62,6 +65,93 @@ namespace CapaNegocio_GreenLife
         {
             get { return total; }
             set { total = value; }
+        }
+
+        public void insertarFactura(int idUser, int idClient, DateTime fech, string payMethod, decimal subtot, decimal tax, decimal tot)
+        {
+            try
+            {
+                IdUsuario = idUser;
+                IdCliente = idClient;
+                Fecha = fech;
+                MetodoDePago = payMethod;
+                Subtotal = subtot;
+                Iva = tax;
+                Total = tot;
+
+                objDatosFactura.InsertarFactura(IdUsuario, IdCliente, Fecha, MetodoDePago, Subtotal, Iva, Total);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void anularFactura(int id)
+        {
+            try
+            {
+                IdFactura = id;
+                objDatosFactura.AnularFactura(IdFactura);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public object consultarFacturasDia(DateTime dia)
+        {
+            try
+            {
+                Fecha = dia;
+                return objDatosFactura.ConsultarFacturasDia(Fecha);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public object consultarFacturacionDiaria(DateTime dia)
+        {
+            try
+            {
+                Fecha = dia;
+                return objDatosFactura.ConsultarFacturacionDiaria(Fecha);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public object consultarFacturasPorCliente(int idClient)
+        {
+            try
+            {
+                IdCliente = idClient;
+                return objDatosFactura.ConsultarFacturasPorCliente(IdCliente);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public object consultarFacturasPorUsuario(int idUser)
+        {
+            try
+            {
+                IdUsuario = idUser;
+                return objDatosFactura.ConsultarFacturasPorUsuario(IdUsuario);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
