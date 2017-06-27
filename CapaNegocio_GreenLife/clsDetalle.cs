@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using CapaDatos_GreenLife;
 
 namespace CapaNegocio_GreenLife
 {
     public class clsDetalle
     {
+        clsDatosDetalle objDatosDetalle = new clsDatosDetalle();
+
         private int idDetalle;
 
         public int IdDetalle
@@ -41,6 +44,24 @@ namespace CapaNegocio_GreenLife
         {
             get { return precio; }
             set { precio = value; }
+        }
+
+        public void insertarDetalle(int idBill, int idPlate, int cant, decimal prize)
+        {
+            try
+            {
+                idFactura = idBill;
+                IdPlato = idPlate;
+                Cantidad = cant;
+                Precio = prize;
+
+                objDatosDetalle.InsertarDetalle(IdFactura,IdPlato,Cantidad,Precio);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
