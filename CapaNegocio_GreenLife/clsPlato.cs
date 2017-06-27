@@ -2,19 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using CapaDatos_GreenLife;
 
 namespace CapaNegocio_GreenLife
 {
     public class clsPlato
     {
-        private int id;
+        clsDatosPlato objDatosPlato = new clsDatosPlato();
+        private int idPlato;
 
-        public int Id
-        {
-            get { return id; }
-            set { id = value; }
-        }
+        
         private string nombre;
 
         public string Nombre
@@ -36,6 +33,97 @@ namespace CapaNegocio_GreenLife
             get { return tipo; }
             set { tipo = value; }
         }
-        
+
+        public byte[] Foto { get => foto; set => foto = value; }
+        public int IdPlato { get => idPlato; set => idPlato = value; }
+
+        private byte[] foto;
+
+        public void insertarPlato(string name, decimal prize, string type, byte[] photo)
+        {
+            try
+            {
+                Nombre = name;
+                Precio = prize;
+                Tipo = type;
+                Foto = photo;
+
+                objDatosPlato.InsertarPlato(Nombre, Precio, Tipo, Foto);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void eliminarPlato(int id)
+        {
+            try
+            {
+                IdPlato = id;
+
+                objDatosPlato.EliminarPlato(IdPlato);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void modificarPlato(int id, string name, decimal prize, string type)
+        {
+            try
+            {
+                IdPlato = id;
+                Nombre = name;
+                Precio = prize;
+                Tipo = type;
+                
+
+                objDatosPlato.ModificarPlato(IdPlato, Nombre, Precio, Tipo);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public object consultarPlatos()
+        {
+            try
+            {
+                return objDatosPlato.ConsultarPlatos();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public object consultarPlatosPorNombre(string name)
+        {
+            try
+            {
+                Nombre = name;
+                return objDatosPlato.ConsultarPlatosPorNombre(Nombre);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public object consultarPlatosPorTipo(string type)
+        {
+            try
+            {
+                Tipo = type;
+                return objDatosPlato.ConsultarPlatosPorNombre(Tipo);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

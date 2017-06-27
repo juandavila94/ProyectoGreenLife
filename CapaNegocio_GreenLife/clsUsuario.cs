@@ -67,13 +67,13 @@ namespace CapaNegocio_GreenLife
 
         public void insertarUsuario(string userName, string password, string name, int role)
         {
-            Usuario = userName;
-            Password = password;
-            Nombre = name;
-            Rol = role;
-
             try
             {
+                Usuario = userName;
+                Password = password;
+                Nombre = name;
+                Rol = role;
+
                 objDatosUsuario.InsertarUsuario(Usuario, Password, Nombre, Rol);
                 
             }
