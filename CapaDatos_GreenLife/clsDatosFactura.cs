@@ -12,7 +12,17 @@ namespace CapaDatos_GreenLife
         {
             using (var bd = new GreenlifeEntities())
             {
-                var courseList = bd.spInsertarFactura( idUsuario,  idCliente,  fecha,  metodoDePago,  subtotal,  iva,  total);
+                var courseList = bd.spInsertarFactura( idUsuario,  idCliente,  fecha,  metodoDePago,  subtotal,  iva,  total,true);
+                bd.SaveChanges();
+            }
+        }
+
+
+        public void AnularFactura(int idFactura)
+        {
+            using (var bd = new GreenlifeEntities())
+            {
+                var courseList = bd.spAnularFactura(idFactura);
                 bd.SaveChanges();
             }
         }

@@ -6,10 +6,12 @@
 @metodoDePago varchar(50),
 @subtotal decimal(20, 15),
 @iva decimal(20, 15),
-@total decimal(20, 15)
+@total decimal(20, 15),
+@validez bit
 )
 AS
 BEGIN
+set @validez=1
 INSERT INTO dbo.factura values(
  @idUsuario ,
  @idCliente ,
@@ -17,5 +19,6 @@ INSERT INTO dbo.factura values(
 @metodoDePago ,
 @subtotal ,
 @iva ,
-@total )
+@total,
+@validez )
 END

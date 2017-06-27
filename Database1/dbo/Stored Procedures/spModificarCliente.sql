@@ -1,10 +1,10 @@
-﻿CREATE  PROCEDURE [dbo].[spModificarCliente]
+﻿CREATE  PROCEDURE spModificarCliente
 (
 @id int,       
 @cedulaNueva VARCHAR (50),                
 @nombre VARCHAR (50),   
 @direccion VARCHAR (100),   
-@telefono int  
+@telefono varchar (10)  
 )
 AS
 BEGIN

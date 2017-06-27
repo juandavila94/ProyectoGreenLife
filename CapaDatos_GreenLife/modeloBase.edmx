@@ -37,6 +37,7 @@
           <Property Name="subtotal" Type="decimal" Precision="20" Scale="15" Nullable="false" />
           <Property Name="iva" Type="decimal" Precision="20" Scale="15" Nullable="false" />
           <Property Name="total" Type="decimal" Precision="20" Scale="15" Nullable="false" />
+          <Property Name="validez" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Plato">
           <Key>
@@ -106,6 +107,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="spAnularFactura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idFactura" Type="int" Mode="In" />
+        </Function>
         <Function Name="spConsultarClientes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="spConsultarClientesPorCedula" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="cedula" Type="varchar" Mode="In" />
@@ -175,6 +179,7 @@
           <Parameter Name="subtotal" Type="decimal" Mode="In" />
           <Parameter Name="iva" Type="decimal" Mode="In" />
           <Parameter Name="total" Type="decimal" Mode="In" />
+          <Parameter Name="validez" Type="bit" Mode="In" />
         </Function>
         <Function Name="spInsertarPlato" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="nombre" Type="varchar" Mode="In" />
@@ -273,6 +278,7 @@
           <NavigationProperty Name="Cliente" Relationship="Self.FK_Factura_Cliente" FromRole="Factura" ToRole="Cliente" />
           <NavigationProperty Name="Detalle" Relationship="Self.FK_Detalle_Factura" FromRole="Factura" ToRole="Detalle" />
           <NavigationProperty Name="Usuario" Relationship="Self.FK_Factura_Usuario" FromRole="Factura" ToRole="Usuario" />
+          <Property Name="validez" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="Plato">
           <Key>
@@ -435,6 +441,7 @@
             <Parameter Name="subtotal" Mode="In" Type="Decimal" />
             <Parameter Name="iva" Mode="In" Type="Decimal" />
             <Parameter Name="total" Mode="In" Type="Decimal" />
+            <Parameter Name="validez" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="spInsertarPlato">
             <Parameter Name="nombre" Mode="In" Type="String" />
@@ -467,6 +474,9 @@
             <Parameter Name="password" Mode="In" Type="String" />
             <Parameter Name="nombre" Mode="In" Type="String" />
             <Parameter Name="rol" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spAnularFactura">
+            <Parameter Name="idFactura" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="spConsultarClientes_Result">
@@ -586,6 +596,7 @@
           <EntitySetMapping Name="Factura">
             <EntityTypeMapping TypeName="GreenlifeModel.Factura">
               <MappingFragment StoreEntitySet="Factura">
+                <ScalarProperty Name="validez" ColumnName="validez" />
                 <ScalarProperty Name="idFactura" ColumnName="idFactura" />
                 <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
                 <ScalarProperty Name="idCliente" ColumnName="idCliente" />
@@ -764,6 +775,7 @@
           <FunctionImportMapping FunctionImportName="spModificarCliente" FunctionName="GreenlifeModel.Store.spModificarCliente" />
           <FunctionImportMapping FunctionImportName="spModificarPlato" FunctionName="GreenlifeModel.Store.spModificarPlato" />
           <FunctionImportMapping FunctionImportName="spModificarUsuario" FunctionName="GreenlifeModel.Store.spModificarUsuario" />
+          <FunctionImportMapping FunctionImportName="spAnularFactura" FunctionName="GreenlifeModel.Store.spAnularFactura" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
