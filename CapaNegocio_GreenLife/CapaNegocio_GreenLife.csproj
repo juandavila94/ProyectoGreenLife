@@ -47,6 +47,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="clsUsuario.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaDatos_GreenLife\CapaDatos_GreenLife.csproj">
+      <Project>{32eb14a4-7a9e-4b51-a0bf-8aa227f77907}</Project>
+      <Name>CapaDatos_GreenLife</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
