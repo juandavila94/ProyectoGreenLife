@@ -11,9 +11,13 @@ namespace GreenLife
 {
     public partial class frmPrincipal : Form
     {
+        int id = 0;
+
         public frmPrincipal()
         {
+
             InitializeComponent();
+            
         }
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
@@ -34,6 +38,7 @@ namespace GreenLife
                 catch (InvalidCastException exc)
                 {
                     // Catch and ignore the error if casting failed.
+                    throw exc;
                 }
             }
 

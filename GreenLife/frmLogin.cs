@@ -12,6 +12,8 @@ namespace GreenLife
 {
     public partial class frmLogin : Form
     {
+        clsUsuario objUsuario = new clsUsuario();
+
         public frmLogin()
         {
             InitializeComponent();
@@ -22,15 +24,14 @@ namespace GreenLife
 
         }
 
+        
         private void picIngresar_Click(object sender, EventArgs e)
         {
             frmPrincipal principal = new frmPrincipal();
             principal.Show();
             this.Hide();
- 
-
         }
-
+        
         private void frmLogin_Load(object sender, EventArgs e)
         {
 
@@ -43,9 +44,10 @@ namespace GreenLife
 
         private void btnIngresarLogin_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("GREEN LIFE", "BIENVENIDO");
+            this.Hide();
             frmPrincipal principal = new frmPrincipal();
             principal.Show();
-            this.Hide();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

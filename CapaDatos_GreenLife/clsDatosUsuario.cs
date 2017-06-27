@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+
+
 namespace CapaDatos_GreenLife
 {
    public  class clsDatosUsuario
     {
 
         GreenlifeEntities bd = new GreenlifeEntities();
+           
+
+
         public void InsertarUsuario(string usuario, string password, string nombre, int rol)
         {
             using (var bd = new GreenlifeEntities())
