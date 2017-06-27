@@ -9,16 +9,11 @@ using System.Windows.Forms;
 
 namespace GreenLife
 {
-    public partial class frmBebidas : Form
+    public partial class frmFacturacion : Form
     {
-        public frmBebidas()
+        public frmFacturacion()
         {
             InitializeComponent();
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

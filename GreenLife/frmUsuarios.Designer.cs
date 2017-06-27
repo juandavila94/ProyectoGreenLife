@@ -1,6 +1,6 @@
 ﻿namespace GreenLife
 {
-    partial class frmParfaits
+    partial class frmUsuarios
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "frmParfaits";
+            this.Text = "frmUsuarios";
         }
 
         #endregion

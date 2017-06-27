@@ -9,16 +9,11 @@ using System.Windows.Forms;
 
 namespace GreenLife
 {
-    public partial class frmEnsaladas : Form
+    public partial class frmCliente : Form
     {
-        public frmEnsaladas()
+        public frmCliente()
         {
             InitializeComponent();
-        }
-
-        internal static bool show()
-        {
-            throw new NotImplementedException();
         }
     }
 }

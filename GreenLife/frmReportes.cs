@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace GreenLife
 {
-    public partial class frmWraps : Form
+    public partial class frmReportes : Form
     {
-        public frmWraps()
+        public frmReportes()
         {
             InitializeComponent();
         }

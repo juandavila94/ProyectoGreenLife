@@ -46,17 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmBebidas.cs">
+    <Compile Include="frmCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBebidas.Designer.cs">
-      <DependentUpon>frmBebidas.cs</DependentUpon>
+    <Compile Include="frmCliente.Designer.cs">
+      <DependentUpon>frmCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEnsaladas.cs">
+    <Compile Include="frmFacturacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEnsaladas.Designer.cs">
-      <DependentUpon>frmEnsaladas.cs</DependentUpon>
+    <Compile Include="frmFacturacion.Designer.cs">
+      <DependentUpon>frmFacturacion.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -64,31 +64,28 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmParfaits.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmParfaits.Designer.cs">
-      <DependentUpon>frmParfaits.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmWraps.cs">
+    <Compile Include="frmReportes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmWraps.Designer.cs">
-      <DependentUpon>frmWraps.cs</DependentUpon>
+    <Compile Include="frmReportes.Designer.cs">
+      <DependentUpon>frmReportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsuarios.Designer.cs">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmBebidas.resx">
-      <DependentUpon>frmBebidas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmEnsaladas.resx">
-      <DependentUpon>frmEnsaladas.cs</DependentUpon>
+    <EmbeddedResource Include="frmFacturacion.resx">
+      <DependentUpon>frmFacturacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

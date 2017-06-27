@@ -1,6 +1,6 @@
 ﻿namespace GreenLife
 {
-    partial class frmWraps
+    partial class frmFacturacion
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // frmFacturacion
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "frmWraps";
+            this.ClientSize = new System.Drawing.Size(654, 432);
+            this.Name = "frmFacturacion";
+            this.Text = "frmFacturacion";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
