@@ -36,14 +36,19 @@ namespace CapaDatos_GreenLife
             }
         }
 
-        public object ConsultarUsuarios()
+        public object ConsultarClientes()
         {
-            return bd.spConsultarUsuarios().ToList();
+            return bd.spConsultarClientes().ToList();
         }
 
-        public object ConsultarUsuariosPorNombre(string nombre)
+        public object ConsultarClientesPorNombre(string nombre)
         {
             return bd.spConsultarUsuarioPorNombre(nombre).ToList();
+        }
+
+        public object ConsultarClientesPorCedula(string cedula)
+        {
+            return bd.spConsultarClientesPorCedula(cedula).ToList();
         }
     }
 }

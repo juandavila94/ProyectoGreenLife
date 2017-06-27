@@ -87,7 +87,7 @@ namespace CapaNegocio_GreenLife
         {
             try
             {
-                user = Usuario;
+                Usuario = user;
                 objDatosUsuario.EliminarUsuario(Usuario);
                 
             }
