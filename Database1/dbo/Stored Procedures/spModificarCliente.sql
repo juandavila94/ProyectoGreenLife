@@ -1,6 +1,6 @@
 ﻿CREATE  PROCEDURE [dbo].[spModificarCliente]
 (
-@cedulaAntigua VARCHAR (50),       
+@id int,       
 @cedulaNueva VARCHAR (50),                
 @nombre VARCHAR (50),   
 @direccion VARCHAR (100),   
@@ -15,5 +15,5 @@ nombre=@nombre,
 direccion=@direccion,
 telefono=@telefono
 WHERE
-cedula=@cedulaAntigua
+idCliente=@id
 END
