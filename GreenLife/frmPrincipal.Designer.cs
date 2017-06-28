@@ -91,6 +91,7 @@
             this.personalToolStripMenuItem.Name = "personalToolStripMenuItem";
             this.personalToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.personalToolStripMenuItem.Text = "Personal";
+            this.personalToolStripMenuItem.Click += new System.EventHandler(this.personalToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
