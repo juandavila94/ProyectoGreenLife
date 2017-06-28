@@ -67,5 +67,11 @@ namespace GreenLife
             frmFactura.Show();
   
         }
+
+        private void personalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUsuarios Usuario = new frmUsuarios();
+            Usuario.Show();
+        }
     }
 }
