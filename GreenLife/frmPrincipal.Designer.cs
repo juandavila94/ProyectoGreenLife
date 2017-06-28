@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.reporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.diarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -143,6 +144,7 @@
             this.Controls.Add(this.picSalir);
             this.Controls.Add(this.menuStrip1);
             this.ForeColor = System.Drawing.Color.White;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPrincipal";
