@@ -194,6 +194,93 @@
   <ItemGroup>
     <None Include="Resources\parfaitFactura.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\completo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frutos rojos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\greengourt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mracuya.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wrap criollo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wrap vegano.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Green Americano.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wrap cesar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wrap cesar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wrap del mar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wrap griega.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agua con gas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\con gas.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\limonada1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pink limonada1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\te de limon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\te de limon1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sodas.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\te de durazno.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\durazno-remedios-caseros-propiedades-medicina-L-vifaeg.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\durazno-remedios-caseros-propiedades-medicina-L-vifaeg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Green griega.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green Rusa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Green Coleslaw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cesar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\19260211_150843102128501_8701235857194581245_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green capres.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\19274747_150845488794929_8129702723107541637_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green veraniega.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
