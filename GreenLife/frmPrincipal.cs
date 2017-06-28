@@ -21,28 +21,28 @@ namespace GreenLife
         }
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            MdiClient ctlMDI;
+            //MdiClient ctlMDI;
 
-            // Loop through all of the form's controls looking
-            // for the control of type MdiClient.
-            foreach (Control ctl in this.Controls)
-            {
-                try
-                {
-                    // Attempt to cast the control to type MdiClient.
-                    ctlMDI = (MdiClient)ctl;
+            //// Loop through all of the form's controls looking
+            //// for the control of type MdiClient.
+            //foreach (Control ctl in this.Controls)
+            //{
+            //    try
+            //    {
+            //        // Attempt to cast the control to type MdiClient.
+            //        ctlMDI = (MdiClient)ctl;
 
-                    // Set the BackColor of the MdiClient control.
-                    ctlMDI.BackColor = this.BackColor;
-                }
-                catch (InvalidCastException exc)
-                {
-                    // Catch and ignore the error if casting failed.
-                    throw exc;
-                }
-            }
+            //        // Set the BackColor of the MdiClient control.
+            //        ctlMDI.BackColor = this.BackColor;
+            //    }
+            //    catch (InvalidCastException exc)
+            //    {
+            //        // Catch and ignore the error if casting failed.
+            //        throw exc;
+            //    }
+            //}
 
-            // Display a child form to show this is still an MDI application.
+            //// Display a child form to show this is still an MDI application.
           
         }
       
@@ -59,6 +59,13 @@ namespace GreenLife
             frmLogin login = new frmLogin();
             login.Show();
             this.Dispose();
+        }
+
+        private void picFacturar_Click(object sender, EventArgs e)
+        {
+            frmOrden frmFactura = new frmOrden();
+            frmFactura.Show();
+  
         }
     }
 }

@@ -35,8 +35,8 @@
             this.mskContrsena = new System.Windows.Forms.MaskedTextBox();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.btnIngresarLogin = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,9 +98,9 @@
             // 
             // btnIngresarLogin
             // 
-            this.btnIngresarLogin.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnIngresarLogin.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.btnIngresarLogin.Font = new System.Drawing.Font("Berlin Sans FB", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngresarLogin.ForeColor = System.Drawing.Color.White;
+            this.btnIngresarLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnIngresarLogin.Location = new System.Drawing.Point(226, 378);
             this.btnIngresarLogin.Name = "btnIngresarLogin";
             this.btnIngresarLogin.Size = new System.Drawing.Size(337, 83);
@@ -108,6 +108,19 @@
             this.btnIngresarLogin.Text = "INGRESAR";
             this.btnIngresarLogin.UseVisualStyleBackColor = false;
             this.btnIngresarLogin.Click += new System.EventHandler(this.btnIngresarLogin_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.LightGreen;
+            this.btnSalir.Font = new System.Drawing.Font("Berlin Sans FB", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnSalir.Location = new System.Drawing.Point(644, 477);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(95, 47);
+            this.btnSalir.TabIndex = 6;
+            this.btnSalir.Text = "SALIR";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // pictureBox1
             // 
@@ -119,19 +132,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnSalir.Font = new System.Drawing.Font("Berlin Sans FB", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(644, 469);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(95, 55);
-            this.btnSalir.TabIndex = 6;
-            this.btnSalir.Text = "SALIR";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // frmLogin
             // 

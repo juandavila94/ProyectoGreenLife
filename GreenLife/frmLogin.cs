@@ -44,7 +44,6 @@ namespace GreenLife
 
         private void btnIngresarLogin_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("GREEN LIFE", "BIENVENIDO");
             this.Hide();
             frmPrincipal principal = new frmPrincipal();
             principal.Show();
