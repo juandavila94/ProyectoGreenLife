@@ -34,11 +34,20 @@ namespace CapaNegocio_GreenLife
             set { tipo = value; }
         }
 
-        public byte[] Foto { get => foto; set => foto = value; }
-        public int IdPlato { get => idPlato; set => idPlato = value; }
+        
+
+        public int IdPlato
+        {
+            get { return idPlato; }
+            set { idPlato = value; }
+        }
 
         private byte[] foto;
-
+        public byte[] Foto
+        {
+            get { return foto; }
+            set { foto = value; }
+        }
         public void insertarPlato(string name, decimal prize, string type, byte[] photo)
         {
             try
