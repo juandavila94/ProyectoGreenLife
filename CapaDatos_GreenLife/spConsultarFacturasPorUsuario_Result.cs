@@ -21,5 +21,6 @@ namespace CapaDatos_GreenLife
         public decimal subtotal { get; set; }
         public decimal iva { get; set; }
         public decimal total { get; set; }
+        public bool validez { get; set; }
     }
 }

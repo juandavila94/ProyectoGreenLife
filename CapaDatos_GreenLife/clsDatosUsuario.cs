@@ -7,11 +7,11 @@ using System.Text;
 
 namespace CapaDatos_GreenLife
 {
-   public  class clsDatosUsuario
+    public class clsDatosUsuario
     {
 
         GreenlifeEntities bd = new GreenlifeEntities();
-           
+
 
 
         public void InsertarUsuario(string usuario, string password, string nombre, int rol)
@@ -36,7 +36,7 @@ namespace CapaDatos_GreenLife
         {
             using (var bd = new GreenlifeEntities())
             {
-                var courseList = bd.spModificarUsuario(id,usuario, password, nombre, rol);
+                var courseList = bd.spModificarUsuario(id, usuario, password, nombre, rol);
                 bd.SaveChanges();
             }
         }
@@ -49,6 +49,11 @@ namespace CapaDatos_GreenLife
         public object ConsultarUsuariosPorNombre(string nombre)
         {
             return bd.spConsultarUsuarioPorNombre(nombre).ToList();
+        }
+
+        public object Login (string usuario, string password)
+        {
+            return bd.spLogin(usuario,password).ToList();
         }
     }
 }

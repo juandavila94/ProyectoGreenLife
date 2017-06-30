@@ -193,6 +193,10 @@
           <Parameter Name="nombre" Type="varchar" Mode="In" />
           <Parameter Name="rol" Type="int" Mode="In" />
         </Function>
+        <Function Name="spLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="user" Type="varchar" Mode="In" />
+          <Parameter Name="password" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="spModificarCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id" Type="int" Mode="In" />
           <Parameter Name="cedulaNueva" Type="varchar" Mode="In" />
@@ -247,9 +251,9 @@
           <Property Name="idCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="cedula" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="telefono" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Factura" Relationship="Self.FK_Factura_Cliente" FromRole="Cliente" ToRole="Factura" />
-          <Property Name="direccion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Detalle">
           <Key>
@@ -275,10 +279,10 @@
           <Property Name="subtotal" Type="Decimal" Precision="20" Scale="15" Nullable="false" />
           <Property Name="iva" Type="Decimal" Precision="20" Scale="15" Nullable="false" />
           <Property Name="total" Type="Decimal" Precision="20" Scale="15" Nullable="false" />
+          <Property Name="validez" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Cliente" Relationship="Self.FK_Factura_Cliente" FromRole="Factura" ToRole="Cliente" />
           <NavigationProperty Name="Detalle" Relationship="Self.FK_Detalle_Factura" FromRole="Factura" ToRole="Detalle" />
           <NavigationProperty Name="Usuario" Relationship="Self.FK_Factura_Usuario" FromRole="Factura" ToRole="Usuario" />
-          <Property Name="validez" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="Plato">
           <Key>
@@ -372,6 +376,9 @@
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="Factura" EntitySet="Factura" />
           </AssociationSet>
+          <FunctionImport Name="spAnularFactura">
+          <Parameter Name="idFactura" Mode="In" Type="Int32" />
+          </FunctionImport>
           <FunctionImport Name="spConsultarClientes" ReturnType="Collection(GreenlifeModel.spConsultarClientes_Result)" />
           <FunctionImport Name="spConsultarClientesPorCedula" ReturnType="Collection(GreenlifeModel.spConsultarClientesPorCedula_Result)">
           <Parameter Name="cedula" Mode="In" Type="String" />
@@ -455,6 +462,10 @@
             <Parameter Name="nombre" Mode="In" Type="String" />
             <Parameter Name="rol" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="spLogin" ReturnType="Collection(GreenlifeModel.spLogin_Result)">
+            <Parameter Name="user" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+          </FunctionImport>
           <FunctionImport Name="spModificarCliente">
             <Parameter Name="id" Mode="In" Type="Int32" />
             <Parameter Name="cedulaNueva" Mode="In" Type="String" />
@@ -474,9 +485,6 @@
             <Parameter Name="password" Mode="In" Type="String" />
             <Parameter Name="nombre" Mode="In" Type="String" />
             <Parameter Name="rol" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="spAnularFactura">
-          <Parameter Name="idFactura" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="spConsultarClientes_Result">
@@ -509,6 +517,7 @@
           <Property Type="Decimal" Name="subtotal" Nullable="false" Precision="20" Scale="15" />
           <Property Type="Decimal" Name="iva" Nullable="false" Precision="20" Scale="15" />
           <Property Type="Decimal" Name="total" Nullable="false" Precision="20" Scale="15" />
+          <Property Type="Boolean" Name="validez" Nullable="false" />
         </ComplexType>
         <ComplexType Name="spConsultarFacturasPorCliente_Result">
           <Property Type="Int32" Name="idFactura" Nullable="false" />
@@ -519,6 +528,7 @@
           <Property Type="Decimal" Name="subtotal" Nullable="false" Precision="20" Scale="15" />
           <Property Type="Decimal" Name="iva" Nullable="false" Precision="20" Scale="15" />
           <Property Type="Decimal" Name="total" Nullable="false" Precision="20" Scale="15" />
+          <Property Type="Boolean" Name="validez" Nullable="false" />
         </ComplexType>
         <ComplexType Name="spConsultarFacturasPorUsuario_Result">
           <Property Type="Int32" Name="idFactura" Nullable="false" />
@@ -529,6 +539,7 @@
           <Property Type="Decimal" Name="subtotal" Nullable="false" Precision="20" Scale="15" />
           <Property Type="Decimal" Name="iva" Nullable="false" Precision="20" Scale="15" />
           <Property Type="Decimal" Name="total" Nullable="false" Precision="20" Scale="15" />
+          <Property Type="Boolean" Name="validez" Nullable="false" />
         </ComplexType>
         <ComplexType Name="spConsultarPlatos_Result">
           <Property Type="Int32" Name="idPlato" Nullable="false" />
@@ -565,6 +576,13 @@
           <Property Type="String" Name="nombre" Nullable="false" MaxLength="100" />
           <Property Type="Int32" Name="rol" Nullable="false" />
         </ComplexType>
+        <ComplexType Name="spLogin_Result">
+          <Property Type="Int32" Name="idUsuario" Nullable="false" />
+          <Property Type="String" Name="usuario" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="password" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="nombre" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="rol" Nullable="false" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -574,10 +592,10 @@
           <EntitySetMapping Name="Cliente">
             <EntityTypeMapping TypeName="GreenlifeModel.Cliente">
               <MappingFragment StoreEntitySet="Cliente">
-                <ScalarProperty Name="direccion" ColumnName="direccion" />
                 <ScalarProperty Name="idCliente" ColumnName="idCliente" />
                 <ScalarProperty Name="cedula" ColumnName="cedula" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
                 <ScalarProperty Name="telefono" ColumnName="telefono" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -596,7 +614,6 @@
           <EntitySetMapping Name="Factura">
             <EntityTypeMapping TypeName="GreenlifeModel.Factura">
               <MappingFragment StoreEntitySet="Factura">
-                <ScalarProperty Name="validez" ColumnName="validez" />
                 <ScalarProperty Name="idFactura" ColumnName="idFactura" />
                 <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
                 <ScalarProperty Name="idCliente" ColumnName="idCliente" />
@@ -605,6 +622,7 @@
                 <ScalarProperty Name="subtotal" ColumnName="subtotal" />
                 <ScalarProperty Name="iva" ColumnName="iva" />
                 <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="validez" ColumnName="validez" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -630,6 +648,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spAnularFactura" FunctionName="GreenlifeModel.Store.spAnularFactura" />
           <FunctionImportMapping FunctionImportName="spConsultarClientes" FunctionName="GreenlifeModel.Store.spConsultarClientes">
             <ResultMapping>
               <ComplexTypeMapping TypeName="GreenlifeModel.spConsultarClientes_Result">
@@ -675,6 +694,7 @@
                 <ScalarProperty Name="subtotal" ColumnName="subtotal" />
                 <ScalarProperty Name="iva" ColumnName="iva" />
                 <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="validez" ColumnName="validez" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -689,6 +709,7 @@
                 <ScalarProperty Name="subtotal" ColumnName="subtotal" />
                 <ScalarProperty Name="iva" ColumnName="iva" />
                 <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="validez" ColumnName="validez" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -703,6 +724,7 @@
                 <ScalarProperty Name="subtotal" ColumnName="subtotal" />
                 <ScalarProperty Name="iva" ColumnName="iva" />
                 <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="validez" ColumnName="validez" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -772,10 +794,20 @@
           <FunctionImportMapping FunctionImportName="spInsertarFactura" FunctionName="GreenlifeModel.Store.spInsertarFactura" />
           <FunctionImportMapping FunctionImportName="spInsertarPlato" FunctionName="GreenlifeModel.Store.spInsertarPlato" />
           <FunctionImportMapping FunctionImportName="spInsertarUsuario" FunctionName="GreenlifeModel.Store.spInsertarUsuario" />
+          <FunctionImportMapping FunctionImportName="spLogin" FunctionName="GreenlifeModel.Store.spLogin">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GreenlifeModel.spLogin_Result">
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="rol" ColumnName="rol" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="spModificarCliente" FunctionName="GreenlifeModel.Store.spModificarCliente" />
           <FunctionImportMapping FunctionImportName="spModificarPlato" FunctionName="GreenlifeModel.Store.spModificarPlato" />
           <FunctionImportMapping FunctionImportName="spModificarUsuario" FunctionName="GreenlifeModel.Store.spModificarUsuario" />
-          <FunctionImportMapping FunctionImportName="spAnularFactura" FunctionName="GreenlifeModel.Store.spAnularFactura" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -793,7 +825,7 @@
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
-        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->

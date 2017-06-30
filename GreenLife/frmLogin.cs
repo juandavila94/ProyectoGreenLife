@@ -27,9 +27,11 @@ namespace GreenLife
         
         private void picIngresar_Click(object sender, EventArgs e)
         {
+            /*
             frmPrincipal principal = new frmPrincipal();
             principal.Show();
             this.Hide();
+            */
         }
         
         private void frmLogin_Load(object sender, EventArgs e)
@@ -44,9 +46,21 @@ namespace GreenLife
 
         private void btnIngresarLogin_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmPrincipal principal = new frmPrincipal();
-            principal.Show();
+            int rol = 0;
+            if ((rol = objUsuario.login(txtUsuario.Text, mskContrsena.Text)) != 0)
+            {
+                MessageBox.Show("GREEN LIFE", "BIENVENIDO");
+                this.Hide();
+                frmPrincipal principal = new frmPrincipal(txtUsuario.Text, rol);
+                principal.Show();
+            }
+            else
+            {
+                MessageBox.Show("USUARIO O CONTRASEÑA INCORRECTOS!");
+                mskContrsena.Clear();
+                txtUsuario.Clear();
+                txtUsuario.Focus();
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

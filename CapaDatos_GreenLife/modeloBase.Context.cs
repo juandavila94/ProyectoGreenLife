@@ -33,6 +33,15 @@ namespace CapaDatos_GreenLife
         public virtual DbSet<Plato> Plato { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
     
+        public virtual int spAnularFactura(Nullable<int> idFactura)
+        {
+            var idFacturaParameter = idFactura.HasValue ?
+                new ObjectParameter("idFactura", idFactura) :
+                new ObjectParameter("idFactura", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spAnularFactura", idFacturaParameter);
+        }
+    
         public virtual ObjectResult<spConsultarClientes_Result> spConsultarClientes()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spConsultarClientes_Result>("spConsultarClientes");
@@ -308,6 +317,19 @@ namespace CapaDatos_GreenLife
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spInsertarUsuario", usuarioParameter, passwordParameter, nombreParameter, rolParameter);
         }
     
+        public virtual ObjectResult<spLogin_Result> spLogin(string user, string password)
+        {
+            var userParameter = user != null ?
+                new ObjectParameter("user", user) :
+                new ObjectParameter("user", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("password", password) :
+                new ObjectParameter("password", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spLogin_Result>("spLogin", userParameter, passwordParameter);
+        }
+    
         public virtual int spModificarCliente(Nullable<int> id, string cedulaNueva, string nombre, string direccion, string telefono)
         {
             var idParameter = id.HasValue ?
@@ -377,15 +399,6 @@ namespace CapaDatos_GreenLife
                 new ObjectParameter("rol", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spModificarUsuario", idUsuarioParameter, usuarioParameter, passwordParameter, nombreParameter, rolParameter);
-        }
-    
-        public virtual int spAnularFactura(Nullable<int> idFactura)
-        {
-            var idFacturaParameter = idFactura.HasValue ?
-                new ObjectParameter("idFactura", idFactura) :
-                new ObjectParameter("idFactura", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spAnularFactura", idFacturaParameter);
         }
     }
 }

@@ -13,11 +13,11 @@ namespace GreenLife
     {
         int id = 0;
 
-        public frmPrincipal()
+        public frmPrincipal(string userName, int access)
         {
 
             InitializeComponent();
-            
+            id = access;
         }
         private void frmPrincipal_Load(object sender, EventArgs e)
         {

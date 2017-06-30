@@ -11,16 +11,12 @@ namespace CapaDatos_GreenLife
 {
     using System;
     
-    public partial class spConsultarFacturasPorCliente_Result
+    public partial class spLogin_Result
     {
-        public int idFactura { get; set; }
-        public Nullable<int> idUsuario { get; set; }
-        public int idCliente { get; set; }
-        public System.DateTime fecha { get; set; }
-        public string metodoDePago { get; set; }
-        public decimal subtotal { get; set; }
-        public decimal iva { get; set; }
-        public decimal total { get; set; }
-        public bool validez { get; set; }
+        public int idUsuario { get; set; }
+        public string usuario { get; set; }
+        public string password { get; set; }
+        public string nombre { get; set; }
+        public int rol { get; set; }
     }
 }

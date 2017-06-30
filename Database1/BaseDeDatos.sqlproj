@@ -97,5 +97,6 @@
     <Build Include="dbo\Stored Procedures\spModificarPlato.sql" />
     <Build Include="dbo\Stored Procedures\spModificarUsuario.sql" />
     <Build Include="dbo\Stored Procedures\spAnularFactura.sql" />
+    <Build Include="dbo\Stored Procedures\spLogin.sql" />
   </ItemGroup>
 </Project>
