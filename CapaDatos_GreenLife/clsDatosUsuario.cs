@@ -51,9 +51,15 @@ namespace CapaDatos_GreenLife
             return bd.spConsultarUsuarioPorNombre(nombre).ToList();
         }
 
-        public object Login (string usuario, string password)
+        public object Login(string usuario, string password)
         {
-            return bd.spLogin(usuario,password).ToList();
+            using (var bd = new GreenlifeEntities())
+            {
+                var courseList = bd.spLogin(usuario,  password).ToList();
+                bd.SaveChanges();
+                return courseList;
+            }
+
         }
     }
 }

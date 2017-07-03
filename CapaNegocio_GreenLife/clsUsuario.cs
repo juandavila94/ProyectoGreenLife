@@ -14,7 +14,11 @@ namespace CapaNegocio_GreenLife
 
         private int idUsuario;
 
-        
+        public int IdUsuario
+        {
+            get { return idUsuario; }
+            set { idUsuario = value; }
+        }
         private string usuario;
 
         public string Usuario
@@ -44,25 +48,15 @@ namespace CapaNegocio_GreenLife
             set { rol = value; }
         }
 
-        public int IdUsuario { get => idUsuario; set => idUsuario = value; }
+
 
         //ingreso al sistema por login
-        
-        public int login(string userName, string password)
-        {
-            Usuario = userName;
-            Password = password;
-            int rol = 0;
 
-            try
-            {
-                var rol2 = objDatosUsuario.Login(Usuario, Password);
-                return rol;
-            }
-            catch (Exception ex)
-            {
-                return rol;
-            }
+        public object login(string userName, string password)
+        {
+            
+            return objDatosUsuario.Login(userName, password);
+                    
         }
 
         public void insertarUsuario(string userName, string password, string name, int role)

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using CapaNegocio_GreenLife;
+using System.Web.Script.Serialization;
+using Newtonsoft.Json;
 
 namespace GreenLife
 {
@@ -46,21 +48,25 @@ namespace GreenLife
 
         private void btnIngresarLogin_Click(object sender, EventArgs e)
         {
-            int rol = 0;
-            if ((rol = objUsuario.login(txtUsuario.Text, mskContrsena.Text)) != 0)
-            {
-                MessageBox.Show("GREEN LIFE", "BIENVENIDO");
-                this.Hide();
-                frmPrincipal principal = new frmPrincipal(txtUsuario.Text, rol);
-                principal.Show();
-            }
-            else
+            var resultadoLogin = objUsuario.login(txtUsuario.Text, mskContrsena.Text);
+            JavaScriptSerializer jss = new JavaScriptSerializer();
+            
+            List<clsUsuario> temp = JsonConvert.DeserializeObject<List<clsUsuario>>(jss.Serialize(resultadoLogin));
+            if (temp.Count == 0)
             {
                 MessageBox.Show("USUARIO O CONTRASEÑA INCORRECTOS!");
                 mskContrsena.Clear();
                 txtUsuario.Clear();
                 txtUsuario.Focus();
             }
+            else {
+                int rol = temp[0].Rol;
+                MessageBox.Show("GREEN LIFE", "BIENVENIDO");
+                this.Hide();
+                frmPrincipal principal = new frmPrincipal(txtUsuario.Text, rol);
+                principal.Show();
+            }
+           
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

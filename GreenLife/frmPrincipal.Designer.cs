@@ -39,7 +39,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.picFacturar = new System.Windows.Forms.PictureBox();
             this.picSalir = new System.Windows.Forms.PictureBox();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFacturar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSalir)).BeginInit();
@@ -48,13 +47,10 @@
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.reporteToolStripMenuItem,
-            this.personalToolStripMenuItem,
-            this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(925, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1233, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -65,59 +61,62 @@
             this.mensualToolStripMenuItem,
             this.clientesToolStripMenuItem});
             this.reporteToolStripMenuItem.Name = "reporteToolStripMenuItem";
-            this.reporteToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.reporteToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
             this.reporteToolStripMenuItem.Text = "Reporte";
             // 
             // diarioToolStripMenuItem
             // 
             this.diarioToolStripMenuItem.Name = "diarioToolStripMenuItem";
-            this.diarioToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.diarioToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
             this.diarioToolStripMenuItem.Text = "Diario";
             // 
             // mensualToolStripMenuItem
             // 
             this.mensualToolStripMenuItem.Name = "mensualToolStripMenuItem";
-            this.mensualToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.mensualToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
             this.mensualToolStripMenuItem.Text = "Mensual";
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
             this.clientesToolStripMenuItem.Text = "Clientes";
             // 
             // personalToolStripMenuItem
             // 
             this.personalToolStripMenuItem.Name = "personalToolStripMenuItem";
-            this.personalToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.personalToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
             this.personalToolStripMenuItem.Text = "Personal";
             this.personalToolStripMenuItem.Click += new System.EventHandler(this.personalToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(50, 24);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::GreenLife.Properties.Resources.anular;
-            this.pictureBox1.Location = new System.Drawing.Point(347, 114);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::GreenLife.Properties.Resources.icoAnular;
+            this.pictureBox1.Location = new System.Drawing.Point(463, 140);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(273, 288);
+            this.pictureBox1.Size = new System.Drawing.Size(364, 354);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
             // picFacturar
             // 
+            this.picFacturar.BackColor = System.Drawing.Color.Transparent;
             this.picFacturar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picFacturar.Image = global::GreenLife.Properties.Resources.caja;
-            this.picFacturar.Location = new System.Drawing.Point(36, 114);
+            this.picFacturar.Image = ((System.Drawing.Image)(resources.GetObject("picFacturar.Image")));
+            this.picFacturar.Location = new System.Drawing.Point(48, 140);
+            this.picFacturar.Margin = new System.Windows.Forms.Padding(4);
             this.picFacturar.Name = "picFacturar";
-            this.picFacturar.Size = new System.Drawing.Size(277, 288);
+            this.picFacturar.Size = new System.Drawing.Size(369, 354);
             this.picFacturar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picFacturar.TabIndex = 3;
             this.picFacturar.TabStop = false;
@@ -125,10 +124,12 @@
             // 
             // picSalir
             // 
-            this.picSalir.Image = global::GreenLife.Properties.Resources.salir1;
-            this.picSalir.Location = new System.Drawing.Point(674, 114);
+            this.picSalir.BackColor = System.Drawing.Color.Transparent;
+            this.picSalir.Image = global::GreenLife.Properties.Resources.icoSalir;
+            this.picSalir.Location = new System.Drawing.Point(899, 140);
+            this.picSalir.Margin = new System.Windows.Forms.Padding(4);
             this.picSalir.Name = "picSalir";
-            this.picSalir.Size = new System.Drawing.Size(241, 288);
+            this.picSalir.Size = new System.Drawing.Size(321, 354);
             this.picSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picSalir.TabIndex = 2;
             this.picSalir.TabStop = false;
@@ -136,10 +137,10 @@
             // 
             // frmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Indigo;
-            this.ClientSize = new System.Drawing.Size(925, 511);
+            this.ClientSize = new System.Drawing.Size(1233, 629);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.picFacturar);
             this.Controls.Add(this.picSalir);
@@ -148,12 +149,11 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmPrincipal";
             this.Text = "GREEN LIFE";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFacturar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSalir)).EndInit();
