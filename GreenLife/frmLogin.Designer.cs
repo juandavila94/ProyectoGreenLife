@@ -36,7 +36,6 @@
             this.btnIngresar = new System.Windows.Forms.Button();
             this.btnIngresarLogin = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -75,6 +74,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(337, 46);
             this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.Text = "juandavila27";
             // 
             // mskContrsena
             // 
@@ -86,6 +86,7 @@
             this.mskContrsena.PasswordChar = '*';
             this.mskContrsena.Size = new System.Drawing.Size(337, 46);
             this.mskContrsena.TabIndex = 2;
+            this.mskContrsena.Text = "juandavila27";
             // 
             // btnIngresar
             // 
@@ -123,15 +124,6 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(610, 378);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 39);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "label1";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -150,7 +142,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Indigo;
             this.ClientSize = new System.Drawing.Size(751, 536);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnIngresarLogin);
@@ -182,6 +173,5 @@
         private System.Windows.Forms.Button btnIngresarLogin;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Label label1;
     }
 }
