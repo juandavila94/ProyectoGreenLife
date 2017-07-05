@@ -99,4 +99,7 @@
     <Build Include="dbo\Stored Procedures\spAnularFactura.sql" />
     <Build Include="dbo\Stored Procedures\spLogin.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\InsercionesPlatos.sql" />
+  </ItemGroup>
 </Project>
