@@ -28,11 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnEnsalada = new System.Windows.Forms.PictureBox();
+            this.btnWrap = new System.Windows.Forms.PictureBox();
+            this.btnParfait = new System.Windows.Forms.PictureBox();
+            this.btnBebidas = new System.Windows.Forms.PictureBox();
             this.btnFacturar = new System.Windows.Forms.Button();
             this.pnlEnsaladas = new System.Windows.Forms.Panel();
+            this.picGreenVeraniega = new System.Windows.Forms.PictureBox();
+            this.picGreenTulipan = new System.Windows.Forms.PictureBox();
+            this.picGreenCapres = new System.Windows.Forms.PictureBox();
+            this.picGreenCesar = new System.Windows.Forms.PictureBox();
+            this.picGreenColeslaw = new System.Windows.Forms.PictureBox();
+            this.picGreenRusa = new System.Windows.Forms.PictureBox();
+            this.picGreenGriega = new System.Windows.Forms.PictureBox();
             this.lblGreenTuilpan = new System.Windows.Forms.Label();
             this.lblGreenVeraniega = new System.Windows.Forms.Label();
             this.lblGreenCapres = new System.Windows.Forms.Label();
@@ -48,24 +59,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.pnlWraps = new System.Windows.Forms.Panel();
-            this.lblWrapGreenGriego = new System.Windows.Forms.Label();
-            this.lblWrapGreenMar = new System.Windows.Forms.Label();
-            this.lblWrapGreenCesar = new System.Windows.Forms.Label();
-            this.lblWrapGreenAmericano = new System.Windows.Forms.Label();
-            this.lblWrapGreenVegano = new System.Windows.Forms.Label();
-            this.lblWrapGreenCriollo = new System.Windows.Forms.Label();
-            this.pnlParfaits = new System.Windows.Forms.Panel();
-            this.lblGreengut = new System.Windows.Forms.Label();
-            this.lblMaracuya = new System.Windows.Forms.Label();
-            this.lblFrutosRojos = new System.Windows.Forms.Label();
-            this.lblCompleto = new System.Windows.Forms.Label();
-            this.dgvOrden = new System.Windows.Forms.DataGridView();
-            this.btnRegresar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.txtTotal = new System.Windows.Forms.TextBox();
-            this.btnEliminarItem = new System.Windows.Forms.Button();
             this.picCola = new System.Windows.Forms.PictureBox();
             this.picTeDurazno = new System.Windows.Forms.PictureBox();
             this.picTeLimon = new System.Windows.Forms.PictureBox();
@@ -73,50 +66,40 @@
             this.picLimonada = new System.Windows.Forms.PictureBox();
             this.picAguaConGas = new System.Windows.Forms.PictureBox();
             this.picAgua = new System.Windows.Forms.PictureBox();
-            this.picGreengourt = new System.Windows.Forms.PictureBox();
-            this.picMaracuya = new System.Windows.Forms.PictureBox();
-            this.picFrutosRojos = new System.Windows.Forms.PictureBox();
-            this.picCompleto = new System.Windows.Forms.PictureBox();
+            this.pnlWraps = new System.Windows.Forms.Panel();
+            this.lblWrapGreenGriego = new System.Windows.Forms.Label();
+            this.lblWrapGreenMar = new System.Windows.Forms.Label();
+            this.lblWrapGreenCesar = new System.Windows.Forms.Label();
+            this.lblWrapGreenAmericano = new System.Windows.Forms.Label();
+            this.lblWrapGreenVegano = new System.Windows.Forms.Label();
+            this.lblWrapGreenCriollo = new System.Windows.Forms.Label();
             this.picWrapGreenGriega = new System.Windows.Forms.PictureBox();
             this.picWrapGreenMar = new System.Windows.Forms.PictureBox();
             this.picWrapGreenCesar = new System.Windows.Forms.PictureBox();
             this.picWrapGreenAmericano = new System.Windows.Forms.PictureBox();
             this.picWrapGreenVegano = new System.Windows.Forms.PictureBox();
             this.picWrapGreenCriollo = new System.Windows.Forms.PictureBox();
-            this.picGreenVeraniega = new System.Windows.Forms.PictureBox();
-            this.picGreenTulipan = new System.Windows.Forms.PictureBox();
-            this.picGreenCapres = new System.Windows.Forms.PictureBox();
-            this.picGreenCesar = new System.Windows.Forms.PictureBox();
-            this.picGreenColeslaw = new System.Windows.Forms.PictureBox();
-            this.picGreenRusa = new System.Windows.Forms.PictureBox();
-            this.picGreenGriega = new System.Windows.Forms.PictureBox();
-            this.btnEnsalada = new System.Windows.Forms.PictureBox();
-            this.btnWrap = new System.Windows.Forms.PictureBox();
-            this.btnParfait = new System.Windows.Forms.PictureBox();
-            this.btnBebidas = new System.Windows.Forms.PictureBox();
+            this.pnlParfaits = new System.Windows.Forms.Panel();
+            this.lblGreengut = new System.Windows.Forms.Label();
+            this.lblMaracuya = new System.Windows.Forms.Label();
+            this.lblFrutosRojos = new System.Windows.Forms.Label();
+            this.lblCompleto = new System.Windows.Forms.Label();
+            this.picGreengourt = new System.Windows.Forms.PictureBox();
+            this.picMaracuya = new System.Windows.Forms.PictureBox();
+            this.picFrutosRojos = new System.Windows.Forms.PictureBox();
+            this.picCompleto = new System.Windows.Forms.PictureBox();
+            this.dgvOrden = new System.Windows.Forms.DataGridView();
+            this.btnRegresar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.btnEliminarItem = new System.Windows.Forms.Button();
             this.pnlMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEnsalada)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnWrap)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnParfait)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBebidas)).BeginInit();
             this.pnlEnsaladas.SuspendLayout();
-            this.pnlBebidas.SuspendLayout();
-            this.pnlWraps.SuspendLayout();
-            this.pnlParfaits.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrden)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCola)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTeDurazno)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTeLimon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPinkLimonade)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLimonada)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAguaConGas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAgua)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picGreengourt)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMaracuya)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picFrutosRojos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCompleto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWrapGreenGriega)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWrapGreenMar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWrapGreenCesar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWrapGreenAmericano)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWrapGreenVegano)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWrapGreenCriollo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGreenVeraniega)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGreenTulipan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGreenCapres)).BeginInit();
@@ -124,10 +107,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.picGreenColeslaw)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGreenRusa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGreenGriega)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEnsalada)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnWrap)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnParfait)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBebidas)).BeginInit();
+            this.pnlBebidas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCola)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTeDurazno)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTeLimon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPinkLimonade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLimonada)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAguaConGas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAgua)).BeginInit();
+            this.pnlWraps.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picWrapGreenGriega)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWrapGreenMar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWrapGreenCesar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWrapGreenAmericano)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWrapGreenVegano)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWrapGreenCriollo)).BeginInit();
+            this.pnlParfaits.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picGreengourt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMaracuya)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFrutosRojos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCompleto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrden)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -142,6 +142,54 @@
             this.pnlMenu.Size = new System.Drawing.Size(564, 476);
             this.pnlMenu.TabIndex = 13;
             // 
+            // btnEnsalada
+            // 
+            this.btnEnsalada.Image = global::GreenLife.Properties.Resources.ensaladaFactura;
+            this.btnEnsalada.Location = new System.Drawing.Point(4, 4);
+            this.btnEnsalada.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEnsalada.Name = "btnEnsalada";
+            this.btnEnsalada.Size = new System.Drawing.Size(268, 234);
+            this.btnEnsalada.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnEnsalada.TabIndex = 0;
+            this.btnEnsalada.TabStop = false;
+            this.btnEnsalada.Click += new System.EventHandler(this.btnEnsalada_Click);
+            // 
+            // btnWrap
+            // 
+            this.btnWrap.Image = global::GreenLife.Properties.Resources.wrapFactura;
+            this.btnWrap.Location = new System.Drawing.Point(4, 245);
+            this.btnWrap.Margin = new System.Windows.Forms.Padding(4);
+            this.btnWrap.Name = "btnWrap";
+            this.btnWrap.Size = new System.Drawing.Size(268, 231);
+            this.btnWrap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnWrap.TabIndex = 1;
+            this.btnWrap.TabStop = false;
+            this.btnWrap.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // btnParfait
+            // 
+            this.btnParfait.Image = global::GreenLife.Properties.Resources.parfaitFactura;
+            this.btnParfait.Location = new System.Drawing.Point(292, 4);
+            this.btnParfait.Margin = new System.Windows.Forms.Padding(4);
+            this.btnParfait.Name = "btnParfait";
+            this.btnParfait.Size = new System.Drawing.Size(260, 234);
+            this.btnParfait.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnParfait.TabIndex = 2;
+            this.btnParfait.TabStop = false;
+            this.btnParfait.Click += new System.EventHandler(this.btnParfait_Click);
+            // 
+            // btnBebidas
+            // 
+            this.btnBebidas.Image = global::GreenLife.Properties.Resources.bebidasFactura;
+            this.btnBebidas.Location = new System.Drawing.Point(292, 245);
+            this.btnBebidas.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBebidas.Name = "btnBebidas";
+            this.btnBebidas.Size = new System.Drawing.Size(260, 231);
+            this.btnBebidas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnBebidas.TabIndex = 3;
+            this.btnBebidas.TabStop = false;
+            this.btnBebidas.Click += new System.EventHandler(this.btnBebidas_Click);
+            // 
             // btnFacturar
             // 
             this.btnFacturar.BackColor = System.Drawing.Color.ForestGreen;
@@ -154,6 +202,7 @@
             this.btnFacturar.TabIndex = 14;
             this.btnFacturar.Text = "ORDEN LISTA";
             this.btnFacturar.UseVisualStyleBackColor = false;
+            this.btnFacturar.Click += new System.EventHandler(this.btnFacturar_Click);
             // 
             // pnlEnsaladas
             // 
@@ -177,6 +226,90 @@
             this.pnlEnsaladas.Size = new System.Drawing.Size(620, 580);
             this.pnlEnsaladas.TabIndex = 14;
             this.pnlEnsaladas.Visible = false;
+            // 
+            // picGreenVeraniega
+            // 
+            this.picGreenVeraniega.Image = global::GreenLife.Properties.Resources.green_veraniega;
+            this.picGreenVeraniega.Location = new System.Drawing.Point(207, 375);
+            this.picGreenVeraniega.Margin = new System.Windows.Forms.Padding(4);
+            this.picGreenVeraniega.Name = "picGreenVeraniega";
+            this.picGreenVeraniega.Size = new System.Drawing.Size(171, 129);
+            this.picGreenVeraniega.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picGreenVeraniega.TabIndex = 44;
+            this.picGreenVeraniega.TabStop = false;
+            this.picGreenVeraniega.Click += new System.EventHandler(this.picGreenVeraniega_Click);
+            // 
+            // picGreenTulipan
+            // 
+            this.picGreenTulipan.Image = global::GreenLife.Properties.Resources._19274747_150845488794929_8129702723107541637_n;
+            this.picGreenTulipan.Location = new System.Drawing.Point(392, 190);
+            this.picGreenTulipan.Margin = new System.Windows.Forms.Padding(4);
+            this.picGreenTulipan.Name = "picGreenTulipan";
+            this.picGreenTulipan.Size = new System.Drawing.Size(171, 129);
+            this.picGreenTulipan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picGreenTulipan.TabIndex = 42;
+            this.picGreenTulipan.TabStop = false;
+            this.picGreenTulipan.Click += new System.EventHandler(this.picGreenTulipan_Click);
+            // 
+            // picGreenCapres
+            // 
+            this.picGreenCapres.Image = global::GreenLife.Properties.Resources.green_capres;
+            this.picGreenCapres.Location = new System.Drawing.Point(207, 190);
+            this.picGreenCapres.Margin = new System.Windows.Forms.Padding(4);
+            this.picGreenCapres.Name = "picGreenCapres";
+            this.picGreenCapres.Size = new System.Drawing.Size(171, 129);
+            this.picGreenCapres.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picGreenCapres.TabIndex = 41;
+            this.picGreenCapres.TabStop = false;
+            this.picGreenCapres.Click += new System.EventHandler(this.picGreenCapres_Click);
+            // 
+            // picGreenCesar
+            // 
+            this.picGreenCesar.Image = global::GreenLife.Properties.Resources._19260211_150843102128501_8701235857194581245_n;
+            this.picGreenCesar.Location = new System.Drawing.Point(21, 190);
+            this.picGreenCesar.Margin = new System.Windows.Forms.Padding(4);
+            this.picGreenCesar.Name = "picGreenCesar";
+            this.picGreenCesar.Size = new System.Drawing.Size(171, 129);
+            this.picGreenCesar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picGreenCesar.TabIndex = 40;
+            this.picGreenCesar.TabStop = false;
+            this.picGreenCesar.Click += new System.EventHandler(this.picGreenCesar_Click);
+            // 
+            // picGreenColeslaw
+            // 
+            this.picGreenColeslaw.Image = global::GreenLife.Properties.Resources.Green_Coleslaw;
+            this.picGreenColeslaw.Location = new System.Drawing.Point(396, 4);
+            this.picGreenColeslaw.Margin = new System.Windows.Forms.Padding(4);
+            this.picGreenColeslaw.Name = "picGreenColeslaw";
+            this.picGreenColeslaw.Size = new System.Drawing.Size(168, 129);
+            this.picGreenColeslaw.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picGreenColeslaw.TabIndex = 21;
+            this.picGreenColeslaw.TabStop = false;
+            this.picGreenColeslaw.Click += new System.EventHandler(this.picGreenColeslaw_Click);
+            // 
+            // picGreenRusa
+            // 
+            this.picGreenRusa.Image = global::GreenLife.Properties.Resources.green_Rusa;
+            this.picGreenRusa.Location = new System.Drawing.Point(207, 4);
+            this.picGreenRusa.Margin = new System.Windows.Forms.Padding(4);
+            this.picGreenRusa.Name = "picGreenRusa";
+            this.picGreenRusa.Size = new System.Drawing.Size(171, 129);
+            this.picGreenRusa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picGreenRusa.TabIndex = 19;
+            this.picGreenRusa.TabStop = false;
+            this.picGreenRusa.Click += new System.EventHandler(this.picGreenRusa_Click);
+            // 
+            // picGreenGriega
+            // 
+            this.picGreenGriega.Image = global::GreenLife.Properties.Resources.Green_griega;
+            this.picGreenGriega.Location = new System.Drawing.Point(25, 0);
+            this.picGreenGriega.Margin = new System.Windows.Forms.Padding(4);
+            this.picGreenGriega.Name = "picGreenGriega";
+            this.picGreenGriega.Size = new System.Drawing.Size(171, 129);
+            this.picGreenGriega.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picGreenGriega.TabIndex = 7;
+            this.picGreenGriega.TabStop = false;
+            this.picGreenGriega.Click += new System.EventHandler(this.pictureBox8_Click);
             // 
             // lblGreenTuilpan
             // 
@@ -370,6 +503,90 @@
             this.label11.TabIndex = 18;
             this.label11.Text = "AGUA";
             // 
+            // picCola
+            // 
+            this.picCola.Image = global::GreenLife.Properties.Resources.sodas;
+            this.picCola.Location = new System.Drawing.Point(4, 378);
+            this.picCola.Margin = new System.Windows.Forms.Padding(4);
+            this.picCola.Name = "picCola";
+            this.picCola.Size = new System.Drawing.Size(192, 156);
+            this.picCola.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picCola.TabIndex = 13;
+            this.picCola.TabStop = false;
+            this.picCola.Click += new System.EventHandler(this.pictureBox25_Click);
+            // 
+            // picTeDurazno
+            // 
+            this.picTeDurazno.Image = global::GreenLife.Properties.Resources.durazno_remedios_caseros_propiedades_medicina_L_vifaeg1;
+            this.picTeDurazno.Location = new System.Drawing.Point(404, 194);
+            this.picTeDurazno.Margin = new System.Windows.Forms.Padding(4);
+            this.picTeDurazno.Name = "picTeDurazno";
+            this.picTeDurazno.Size = new System.Drawing.Size(192, 146);
+            this.picTeDurazno.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picTeDurazno.TabIndex = 12;
+            this.picTeDurazno.TabStop = false;
+            this.picTeDurazno.Click += new System.EventHandler(this.picTeDurazno_Click);
+            // 
+            // picTeLimon
+            // 
+            this.picTeLimon.Image = global::GreenLife.Properties.Resources.te_de_limon;
+            this.picTeLimon.Location = new System.Drawing.Point(204, 194);
+            this.picTeLimon.Margin = new System.Windows.Forms.Padding(4);
+            this.picTeLimon.Name = "picTeLimon";
+            this.picTeLimon.Size = new System.Drawing.Size(192, 146);
+            this.picTeLimon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picTeLimon.TabIndex = 11;
+            this.picTeLimon.TabStop = false;
+            this.picTeLimon.Click += new System.EventHandler(this.picTeLimon_Click);
+            // 
+            // picPinkLimonade
+            // 
+            this.picPinkLimonade.Image = global::GreenLife.Properties.Resources.pink_limonada1;
+            this.picPinkLimonade.Location = new System.Drawing.Point(4, 194);
+            this.picPinkLimonade.Margin = new System.Windows.Forms.Padding(4);
+            this.picPinkLimonade.Name = "picPinkLimonade";
+            this.picPinkLimonade.Size = new System.Drawing.Size(192, 146);
+            this.picPinkLimonade.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picPinkLimonade.TabIndex = 10;
+            this.picPinkLimonade.TabStop = false;
+            this.picPinkLimonade.Click += new System.EventHandler(this.picPinkLimonade_Click);
+            // 
+            // picLimonada
+            // 
+            this.picLimonada.Image = global::GreenLife.Properties.Resources.limonada1;
+            this.picLimonada.Location = new System.Drawing.Point(401, 7);
+            this.picLimonada.Margin = new System.Windows.Forms.Padding(4);
+            this.picLimonada.Name = "picLimonada";
+            this.picLimonada.Size = new System.Drawing.Size(192, 150);
+            this.picLimonada.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLimonada.TabIndex = 9;
+            this.picLimonada.TabStop = false;
+            this.picLimonada.Click += new System.EventHandler(this.picLimonada_Click);
+            // 
+            // picAguaConGas
+            // 
+            this.picAguaConGas.Image = global::GreenLife.Properties.Resources.con_gas;
+            this.picAguaConGas.Location = new System.Drawing.Point(201, 7);
+            this.picAguaConGas.Margin = new System.Windows.Forms.Padding(4);
+            this.picAguaConGas.Name = "picAguaConGas";
+            this.picAguaConGas.Size = new System.Drawing.Size(192, 150);
+            this.picAguaConGas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picAguaConGas.TabIndex = 8;
+            this.picAguaConGas.TabStop = false;
+            this.picAguaConGas.Click += new System.EventHandler(this.picAguaConGas_Click);
+            // 
+            // picAgua
+            // 
+            this.picAgua.Image = global::GreenLife.Properties.Resources.agua_con_gas;
+            this.picAgua.Location = new System.Drawing.Point(4, 7);
+            this.picAgua.Margin = new System.Windows.Forms.Padding(4);
+            this.picAgua.Name = "picAgua";
+            this.picAgua.Size = new System.Drawing.Size(192, 150);
+            this.picAgua.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picAgua.TabIndex = 7;
+            this.picAgua.TabStop = false;
+            this.picAgua.Click += new System.EventHandler(this.pictureBox13_Click);
+            // 
             // pnlWraps
             // 
             this.pnlWraps.Controls.Add(this.lblWrapGreenGriego);
@@ -464,292 +681,6 @@
             this.lblWrapGreenCriollo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblWrapGreenCriollo.Click += new System.EventHandler(this.label5_Click);
             // 
-            // pnlParfaits
-            // 
-            this.pnlParfaits.Controls.Add(this.lblGreengut);
-            this.pnlParfaits.Controls.Add(this.lblMaracuya);
-            this.pnlParfaits.Controls.Add(this.lblFrutosRojos);
-            this.pnlParfaits.Controls.Add(this.lblCompleto);
-            this.pnlParfaits.Controls.Add(this.picGreengourt);
-            this.pnlParfaits.Controls.Add(this.picMaracuya);
-            this.pnlParfaits.Controls.Add(this.picFrutosRojos);
-            this.pnlParfaits.Controls.Add(this.picCompleto);
-            this.pnlParfaits.Location = new System.Drawing.Point(25, 25);
-            this.pnlParfaits.Margin = new System.Windows.Forms.Padding(4);
-            this.pnlParfaits.Name = "pnlParfaits";
-            this.pnlParfaits.Size = new System.Drawing.Size(583, 575);
-            this.pnlParfaits.TabIndex = 17;
-            this.pnlParfaits.Visible = false;
-            // 
-            // lblGreengut
-            // 
-            this.lblGreengut.AutoSize = true;
-            this.lblGreengut.Font = new System.Drawing.Font("Berlin Sans FB", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGreengut.ForeColor = System.Drawing.Color.Indigo;
-            this.lblGreengut.Location = new System.Drawing.Point(87, 478);
-            this.lblGreengut.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblGreengut.Name = "lblGreengut";
-            this.lblGreengut.Size = new System.Drawing.Size(162, 30);
-            this.lblGreengut.TabIndex = 16;
-            this.lblGreengut.Text = "GREENGURT";
-            // 
-            // lblMaracuya
-            // 
-            this.lblMaracuya.AutoSize = true;
-            this.lblMaracuya.Font = new System.Drawing.Font("Berlin Sans FB", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaracuya.ForeColor = System.Drawing.Color.Indigo;
-            this.lblMaracuya.Location = new System.Drawing.Point(362, 478);
-            this.lblMaracuya.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblMaracuya.Name = "lblMaracuya";
-            this.lblMaracuya.Size = new System.Drawing.Size(154, 30);
-            this.lblMaracuya.TabIndex = 17;
-            this.lblMaracuya.Text = "MARACUYA";
-            // 
-            // lblFrutosRojos
-            // 
-            this.lblFrutosRojos.AutoSize = true;
-            this.lblFrutosRojos.Font = new System.Drawing.Font("Berlin Sans FB", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFrutosRojos.ForeColor = System.Drawing.Color.Indigo;
-            this.lblFrutosRojos.Location = new System.Drawing.Point(345, 223);
-            this.lblFrutosRojos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblFrutosRojos.Name = "lblFrutosRojos";
-            this.lblFrutosRojos.Size = new System.Drawing.Size(192, 30);
-            this.lblFrutosRojos.TabIndex = 15;
-            this.lblFrutosRojos.Text = "FRUTOS ROJOS";
-            // 
-            // lblCompleto
-            // 
-            this.lblCompleto.AutoSize = true;
-            this.lblCompleto.Font = new System.Drawing.Font("Berlin Sans FB", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompleto.ForeColor = System.Drawing.Color.Indigo;
-            this.lblCompleto.Location = new System.Drawing.Point(101, 223);
-            this.lblCompleto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCompleto.Name = "lblCompleto";
-            this.lblCompleto.Size = new System.Drawing.Size(150, 30);
-            this.lblCompleto.TabIndex = 14;
-            this.lblCompleto.Text = "COMPLETO";
-            this.lblCompleto.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // dgvOrden
-            // 
-            this.dgvOrden.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Berlin Sans FB", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOrden.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvOrden.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Berlin Sans FB", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvOrden.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvOrden.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgvOrden.Location = new System.Drawing.Point(681, 20);
-            this.dgvOrden.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvOrden.Name = "dgvOrden";
-            this.dgvOrden.Size = new System.Drawing.Size(588, 580);
-            this.dgvOrden.TabIndex = 28;
-            // 
-            // btnRegresar
-            // 
-            this.btnRegresar.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnRegresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresar.ForeColor = System.Drawing.Color.White;
-            this.btnRegresar.Location = new System.Drawing.Point(26, 730);
-            this.btnRegresar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(200, 84);
-            this.btnRegresar.TabIndex = 19;
-            this.btnRegresar.Text = "REGRESAR";
-            this.btnRegresar.UseVisualStyleBackColor = false;
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.Color.Firebrick;
-            this.btnCancelar.Font = new System.Drawing.Font("Berlin Sans FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(681, 687);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(257, 127);
-            this.btnCancelar.TabIndex = 20;
-            this.btnCancelar.Text = "BORRAR ORDEN";
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Berlin Sans FB", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(896, 610);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(138, 44);
-            this.lblTotal.TabIndex = 29;
-            this.lblTotal.Text = "TOTAL";
-            // 
-            // txtTotal
-            // 
-            this.txtTotal.Font = new System.Drawing.Font("Berlin Sans FB", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(1055, 607);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.ReadOnly = true;
-            this.txtTotal.Size = new System.Drawing.Size(214, 51);
-            this.txtTotal.TabIndex = 30;
-            // 
-            // btnEliminarItem
-            // 
-            this.btnEliminarItem.BackColor = System.Drawing.Color.OrangeRed;
-            this.btnEliminarItem.Font = new System.Drawing.Font("Berlin Sans FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarItem.ForeColor = System.Drawing.Color.White;
-            this.btnEliminarItem.Location = new System.Drawing.Point(504, 705);
-            this.btnEliminarItem.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEliminarItem.Name = "btnEliminarItem";
-            this.btnEliminarItem.Size = new System.Drawing.Size(136, 109);
-            this.btnEliminarItem.TabIndex = 31;
-            this.btnEliminarItem.Text = "eliminar Item";
-            this.btnEliminarItem.UseVisualStyleBackColor = false;
-            this.btnEliminarItem.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // picCola
-            // 
-            this.picCola.Image = global::GreenLife.Properties.Resources.sodas;
-            this.picCola.Location = new System.Drawing.Point(4, 378);
-            this.picCola.Margin = new System.Windows.Forms.Padding(4);
-            this.picCola.Name = "picCola";
-            this.picCola.Size = new System.Drawing.Size(192, 156);
-            this.picCola.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picCola.TabIndex = 13;
-            this.picCola.TabStop = false;
-            this.picCola.Click += new System.EventHandler(this.pictureBox25_Click);
-            // 
-            // picTeDurazno
-            // 
-            this.picTeDurazno.Image = global::GreenLife.Properties.Resources.durazno_remedios_caseros_propiedades_medicina_L_vifaeg1;
-            this.picTeDurazno.Location = new System.Drawing.Point(404, 194);
-            this.picTeDurazno.Margin = new System.Windows.Forms.Padding(4);
-            this.picTeDurazno.Name = "picTeDurazno";
-            this.picTeDurazno.Size = new System.Drawing.Size(192, 146);
-            this.picTeDurazno.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picTeDurazno.TabIndex = 12;
-            this.picTeDurazno.TabStop = false;
-            this.picTeDurazno.Click += new System.EventHandler(this.picTeDurazno_Click);
-            // 
-            // picTeLimon
-            // 
-            this.picTeLimon.Image = global::GreenLife.Properties.Resources.te_de_limon;
-            this.picTeLimon.Location = new System.Drawing.Point(204, 194);
-            this.picTeLimon.Margin = new System.Windows.Forms.Padding(4);
-            this.picTeLimon.Name = "picTeLimon";
-            this.picTeLimon.Size = new System.Drawing.Size(192, 146);
-            this.picTeLimon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picTeLimon.TabIndex = 11;
-            this.picTeLimon.TabStop = false;
-            this.picTeLimon.Click += new System.EventHandler(this.picTeLimon_Click);
-            // 
-            // picPinkLimonade
-            // 
-            this.picPinkLimonade.Image = global::GreenLife.Properties.Resources.pink_limonada1;
-            this.picPinkLimonade.Location = new System.Drawing.Point(4, 194);
-            this.picPinkLimonade.Margin = new System.Windows.Forms.Padding(4);
-            this.picPinkLimonade.Name = "picPinkLimonade";
-            this.picPinkLimonade.Size = new System.Drawing.Size(192, 146);
-            this.picPinkLimonade.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picPinkLimonade.TabIndex = 10;
-            this.picPinkLimonade.TabStop = false;
-            this.picPinkLimonade.Click += new System.EventHandler(this.picPinkLimonade_Click);
-            // 
-            // picLimonada
-            // 
-            this.picLimonada.Image = global::GreenLife.Properties.Resources.limonada1;
-            this.picLimonada.Location = new System.Drawing.Point(401, 7);
-            this.picLimonada.Margin = new System.Windows.Forms.Padding(4);
-            this.picLimonada.Name = "picLimonada";
-            this.picLimonada.Size = new System.Drawing.Size(192, 150);
-            this.picLimonada.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picLimonada.TabIndex = 9;
-            this.picLimonada.TabStop = false;
-            this.picLimonada.Click += new System.EventHandler(this.picLimonada_Click);
-            // 
-            // picAguaConGas
-            // 
-            this.picAguaConGas.Image = global::GreenLife.Properties.Resources.con_gas;
-            this.picAguaConGas.Location = new System.Drawing.Point(201, 7);
-            this.picAguaConGas.Margin = new System.Windows.Forms.Padding(4);
-            this.picAguaConGas.Name = "picAguaConGas";
-            this.picAguaConGas.Size = new System.Drawing.Size(192, 150);
-            this.picAguaConGas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picAguaConGas.TabIndex = 8;
-            this.picAguaConGas.TabStop = false;
-            this.picAguaConGas.Click += new System.EventHandler(this.picAguaConGas_Click);
-            // 
-            // picAgua
-            // 
-            this.picAgua.Image = global::GreenLife.Properties.Resources.agua_con_gas;
-            this.picAgua.Location = new System.Drawing.Point(4, 7);
-            this.picAgua.Margin = new System.Windows.Forms.Padding(4);
-            this.picAgua.Name = "picAgua";
-            this.picAgua.Size = new System.Drawing.Size(192, 150);
-            this.picAgua.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picAgua.TabIndex = 7;
-            this.picAgua.TabStop = false;
-            this.picAgua.Click += new System.EventHandler(this.pictureBox13_Click);
-            // 
-            // picGreengourt
-            // 
-            this.picGreengourt.Image = global::GreenLife.Properties.Resources.greengourt;
-            this.picGreengourt.Location = new System.Drawing.Point(78, 286);
-            this.picGreengourt.Margin = new System.Windows.Forms.Padding(4);
-            this.picGreengourt.Name = "picGreengourt";
-            this.picGreengourt.Size = new System.Drawing.Size(196, 168);
-            this.picGreengourt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picGreengourt.TabIndex = 12;
-            this.picGreengourt.TabStop = false;
-            this.picGreengourt.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
-            // picMaracuya
-            // 
-            this.picMaracuya.Image = global::GreenLife.Properties.Resources.mracuya;
-            this.picMaracuya.Location = new System.Drawing.Point(338, 286);
-            this.picMaracuya.Margin = new System.Windows.Forms.Padding(4);
-            this.picMaracuya.Name = "picMaracuya";
-            this.picMaracuya.Size = new System.Drawing.Size(199, 168);
-            this.picMaracuya.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picMaracuya.TabIndex = 11;
-            this.picMaracuya.TabStop = false;
-            this.picMaracuya.Click += new System.EventHandler(this.picMaracuya_Click);
-            // 
-            // picFrutosRojos
-            // 
-            this.picFrutosRojos.Image = global::GreenLife.Properties.Resources.frutos_rojos;
-            this.picFrutosRojos.Location = new System.Drawing.Point(336, 37);
-            this.picFrutosRojos.Margin = new System.Windows.Forms.Padding(4);
-            this.picFrutosRojos.Name = "picFrutosRojos";
-            this.picFrutosRojos.Size = new System.Drawing.Size(201, 170);
-            this.picFrutosRojos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picFrutosRojos.TabIndex = 10;
-            this.picFrutosRojos.TabStop = false;
-            this.picFrutosRojos.Click += new System.EventHandler(this.picFrutosRojos_Click);
-            // 
-            // picCompleto
-            // 
-            this.picCompleto.Image = global::GreenLife.Properties.Resources.completo;
-            this.picCompleto.Location = new System.Drawing.Point(78, 38);
-            this.picCompleto.Margin = new System.Windows.Forms.Padding(4);
-            this.picCompleto.Name = "picCompleto";
-            this.picCompleto.Size = new System.Drawing.Size(196, 167);
-            this.picCompleto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picCompleto.TabIndex = 7;
-            this.picCompleto.TabStop = false;
-            this.picCompleto.Click += new System.EventHandler(this.picCompleto_Click);
-            // 
             // picWrapGreenGriega
             // 
             this.picWrapGreenGriega.Image = global::GreenLife.Properties.Resources.wrap_griega;
@@ -822,143 +753,215 @@
             this.picWrapGreenCriollo.TabStop = false;
             this.picWrapGreenCriollo.Click += new System.EventHandler(this.picWrapGreenCriollo_Click);
             // 
-            // picGreenVeraniega
+            // pnlParfaits
             // 
-            this.picGreenVeraniega.Image = global::GreenLife.Properties.Resources.green_veraniega;
-            this.picGreenVeraniega.Location = new System.Drawing.Point(207, 375);
-            this.picGreenVeraniega.Margin = new System.Windows.Forms.Padding(4);
-            this.picGreenVeraniega.Name = "picGreenVeraniega";
-            this.picGreenVeraniega.Size = new System.Drawing.Size(171, 129);
-            this.picGreenVeraniega.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picGreenVeraniega.TabIndex = 44;
-            this.picGreenVeraniega.TabStop = false;
-            this.picGreenVeraniega.Click += new System.EventHandler(this.picGreenVeraniega_Click);
+            this.pnlParfaits.Controls.Add(this.lblGreengut);
+            this.pnlParfaits.Controls.Add(this.lblMaracuya);
+            this.pnlParfaits.Controls.Add(this.lblFrutosRojos);
+            this.pnlParfaits.Controls.Add(this.lblCompleto);
+            this.pnlParfaits.Controls.Add(this.picGreengourt);
+            this.pnlParfaits.Controls.Add(this.picMaracuya);
+            this.pnlParfaits.Controls.Add(this.picFrutosRojos);
+            this.pnlParfaits.Controls.Add(this.picCompleto);
+            this.pnlParfaits.Location = new System.Drawing.Point(25, 25);
+            this.pnlParfaits.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlParfaits.Name = "pnlParfaits";
+            this.pnlParfaits.Size = new System.Drawing.Size(583, 575);
+            this.pnlParfaits.TabIndex = 17;
+            this.pnlParfaits.Visible = false;
             // 
-            // picGreenTulipan
+            // lblGreengut
             // 
-            this.picGreenTulipan.Image = global::GreenLife.Properties.Resources._19274747_150845488794929_8129702723107541637_n;
-            this.picGreenTulipan.Location = new System.Drawing.Point(392, 190);
-            this.picGreenTulipan.Margin = new System.Windows.Forms.Padding(4);
-            this.picGreenTulipan.Name = "picGreenTulipan";
-            this.picGreenTulipan.Size = new System.Drawing.Size(171, 129);
-            this.picGreenTulipan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picGreenTulipan.TabIndex = 42;
-            this.picGreenTulipan.TabStop = false;
-            this.picGreenTulipan.Click += new System.EventHandler(this.picGreenTulipan_Click);
+            this.lblGreengut.AutoSize = true;
+            this.lblGreengut.Font = new System.Drawing.Font("Berlin Sans FB", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGreengut.ForeColor = System.Drawing.Color.Indigo;
+            this.lblGreengut.Location = new System.Drawing.Point(87, 478);
+            this.lblGreengut.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGreengut.Name = "lblGreengut";
+            this.lblGreengut.Size = new System.Drawing.Size(162, 30);
+            this.lblGreengut.TabIndex = 16;
+            this.lblGreengut.Text = "GREENGURT";
             // 
-            // picGreenCapres
+            // lblMaracuya
             // 
-            this.picGreenCapres.Image = global::GreenLife.Properties.Resources.green_capres;
-            this.picGreenCapres.Location = new System.Drawing.Point(207, 190);
-            this.picGreenCapres.Margin = new System.Windows.Forms.Padding(4);
-            this.picGreenCapres.Name = "picGreenCapres";
-            this.picGreenCapres.Size = new System.Drawing.Size(171, 129);
-            this.picGreenCapres.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picGreenCapres.TabIndex = 41;
-            this.picGreenCapres.TabStop = false;
-            this.picGreenCapres.Click += new System.EventHandler(this.picGreenCapres_Click);
+            this.lblMaracuya.AutoSize = true;
+            this.lblMaracuya.Font = new System.Drawing.Font("Berlin Sans FB", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaracuya.ForeColor = System.Drawing.Color.Indigo;
+            this.lblMaracuya.Location = new System.Drawing.Point(362, 478);
+            this.lblMaracuya.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMaracuya.Name = "lblMaracuya";
+            this.lblMaracuya.Size = new System.Drawing.Size(154, 30);
+            this.lblMaracuya.TabIndex = 17;
+            this.lblMaracuya.Text = "MARACUYA";
             // 
-            // picGreenCesar
+            // lblFrutosRojos
             // 
-            this.picGreenCesar.Image = global::GreenLife.Properties.Resources._19260211_150843102128501_8701235857194581245_n;
-            this.picGreenCesar.Location = new System.Drawing.Point(21, 190);
-            this.picGreenCesar.Margin = new System.Windows.Forms.Padding(4);
-            this.picGreenCesar.Name = "picGreenCesar";
-            this.picGreenCesar.Size = new System.Drawing.Size(171, 129);
-            this.picGreenCesar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picGreenCesar.TabIndex = 40;
-            this.picGreenCesar.TabStop = false;
-            this.picGreenCesar.Click += new System.EventHandler(this.picGreenCesar_Click);
+            this.lblFrutosRojos.AutoSize = true;
+            this.lblFrutosRojos.Font = new System.Drawing.Font("Berlin Sans FB", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFrutosRojos.ForeColor = System.Drawing.Color.Indigo;
+            this.lblFrutosRojos.Location = new System.Drawing.Point(345, 223);
+            this.lblFrutosRojos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFrutosRojos.Name = "lblFrutosRojos";
+            this.lblFrutosRojos.Size = new System.Drawing.Size(192, 30);
+            this.lblFrutosRojos.TabIndex = 15;
+            this.lblFrutosRojos.Text = "FRUTOS ROJOS";
             // 
-            // picGreenColeslaw
+            // lblCompleto
             // 
-            this.picGreenColeslaw.Image = global::GreenLife.Properties.Resources.Green_Coleslaw;
-            this.picGreenColeslaw.Location = new System.Drawing.Point(396, 4);
-            this.picGreenColeslaw.Margin = new System.Windows.Forms.Padding(4);
-            this.picGreenColeslaw.Name = "picGreenColeslaw";
-            this.picGreenColeslaw.Size = new System.Drawing.Size(168, 129);
-            this.picGreenColeslaw.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picGreenColeslaw.TabIndex = 21;
-            this.picGreenColeslaw.TabStop = false;
-            this.picGreenColeslaw.Click += new System.EventHandler(this.picGreenColeslaw_Click);
+            this.lblCompleto.AutoSize = true;
+            this.lblCompleto.Font = new System.Drawing.Font("Berlin Sans FB", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompleto.ForeColor = System.Drawing.Color.Indigo;
+            this.lblCompleto.Location = new System.Drawing.Point(101, 223);
+            this.lblCompleto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCompleto.Name = "lblCompleto";
+            this.lblCompleto.Size = new System.Drawing.Size(150, 30);
+            this.lblCompleto.TabIndex = 14;
+            this.lblCompleto.Text = "COMPLETO";
+            this.lblCompleto.Click += new System.EventHandler(this.label1_Click);
             // 
-            // picGreenRusa
+            // picGreengourt
             // 
-            this.picGreenRusa.Image = global::GreenLife.Properties.Resources.green_Rusa;
-            this.picGreenRusa.Location = new System.Drawing.Point(207, 4);
-            this.picGreenRusa.Margin = new System.Windows.Forms.Padding(4);
-            this.picGreenRusa.Name = "picGreenRusa";
-            this.picGreenRusa.Size = new System.Drawing.Size(171, 129);
-            this.picGreenRusa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picGreenRusa.TabIndex = 19;
-            this.picGreenRusa.TabStop = false;
-            this.picGreenRusa.Click += new System.EventHandler(this.picGreenRusa_Click);
+            this.picGreengourt.Image = global::GreenLife.Properties.Resources.greengourt;
+            this.picGreengourt.Location = new System.Drawing.Point(78, 286);
+            this.picGreengourt.Margin = new System.Windows.Forms.Padding(4);
+            this.picGreengourt.Name = "picGreengourt";
+            this.picGreengourt.Size = new System.Drawing.Size(196, 168);
+            this.picGreengourt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picGreengourt.TabIndex = 12;
+            this.picGreengourt.TabStop = false;
+            this.picGreengourt.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // picGreenGriega
+            // picMaracuya
             // 
-            this.picGreenGriega.Image = global::GreenLife.Properties.Resources.Green_griega;
-            this.picGreenGriega.Location = new System.Drawing.Point(25, 0);
-            this.picGreenGriega.Margin = new System.Windows.Forms.Padding(4);
-            this.picGreenGriega.Name = "picGreenGriega";
-            this.picGreenGriega.Size = new System.Drawing.Size(171, 129);
-            this.picGreenGriega.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picGreenGriega.TabIndex = 7;
-            this.picGreenGriega.TabStop = false;
-            this.picGreenGriega.Click += new System.EventHandler(this.pictureBox8_Click);
+            this.picMaracuya.Image = global::GreenLife.Properties.Resources.mracuya;
+            this.picMaracuya.Location = new System.Drawing.Point(338, 286);
+            this.picMaracuya.Margin = new System.Windows.Forms.Padding(4);
+            this.picMaracuya.Name = "picMaracuya";
+            this.picMaracuya.Size = new System.Drawing.Size(199, 168);
+            this.picMaracuya.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picMaracuya.TabIndex = 11;
+            this.picMaracuya.TabStop = false;
+            this.picMaracuya.Click += new System.EventHandler(this.picMaracuya_Click);
             // 
-            // btnEnsalada
+            // picFrutosRojos
             // 
-            this.btnEnsalada.Image = global::GreenLife.Properties.Resources.ensaladaFactura;
-            this.btnEnsalada.Location = new System.Drawing.Point(4, 4);
-            this.btnEnsalada.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEnsalada.Name = "btnEnsalada";
-            this.btnEnsalada.Size = new System.Drawing.Size(268, 234);
-            this.btnEnsalada.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnEnsalada.TabIndex = 0;
-            this.btnEnsalada.TabStop = false;
-            this.btnEnsalada.Click += new System.EventHandler(this.btnEnsalada_Click);
+            this.picFrutosRojos.Image = global::GreenLife.Properties.Resources.frutos_rojos;
+            this.picFrutosRojos.Location = new System.Drawing.Point(336, 37);
+            this.picFrutosRojos.Margin = new System.Windows.Forms.Padding(4);
+            this.picFrutosRojos.Name = "picFrutosRojos";
+            this.picFrutosRojos.Size = new System.Drawing.Size(201, 170);
+            this.picFrutosRojos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picFrutosRojos.TabIndex = 10;
+            this.picFrutosRojos.TabStop = false;
+            this.picFrutosRojos.Click += new System.EventHandler(this.picFrutosRojos_Click);
             // 
-            // btnWrap
+            // picCompleto
             // 
-            this.btnWrap.Image = global::GreenLife.Properties.Resources.wrapFactura;
-            this.btnWrap.Location = new System.Drawing.Point(4, 245);
-            this.btnWrap.Margin = new System.Windows.Forms.Padding(4);
-            this.btnWrap.Name = "btnWrap";
-            this.btnWrap.Size = new System.Drawing.Size(268, 231);
-            this.btnWrap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnWrap.TabIndex = 1;
-            this.btnWrap.TabStop = false;
-            this.btnWrap.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.picCompleto.Image = global::GreenLife.Properties.Resources.completo;
+            this.picCompleto.Location = new System.Drawing.Point(78, 38);
+            this.picCompleto.Margin = new System.Windows.Forms.Padding(4);
+            this.picCompleto.Name = "picCompleto";
+            this.picCompleto.Size = new System.Drawing.Size(196, 167);
+            this.picCompleto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picCompleto.TabIndex = 7;
+            this.picCompleto.TabStop = false;
+            this.picCompleto.Click += new System.EventHandler(this.picCompleto_Click);
             // 
-            // btnParfait
+            // dgvOrden
             // 
-            this.btnParfait.Image = global::GreenLife.Properties.Resources.parfaitFactura;
-            this.btnParfait.Location = new System.Drawing.Point(292, 4);
-            this.btnParfait.Margin = new System.Windows.Forms.Padding(4);
-            this.btnParfait.Name = "btnParfait";
-            this.btnParfait.Size = new System.Drawing.Size(260, 234);
-            this.btnParfait.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnParfait.TabIndex = 2;
-            this.btnParfait.TabStop = false;
-            this.btnParfait.Click += new System.EventHandler(this.btnParfait_Click);
+            this.dgvOrden.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Berlin Sans FB", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOrden.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvOrden.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Berlin Sans FB", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvOrden.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvOrden.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvOrden.Location = new System.Drawing.Point(681, 20);
+            this.dgvOrden.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvOrden.Name = "dgvOrden";
+            this.dgvOrden.Size = new System.Drawing.Size(588, 580);
+            this.dgvOrden.TabIndex = 28;
             // 
-            // btnBebidas
+            // btnRegresar
             // 
-            this.btnBebidas.Image = global::GreenLife.Properties.Resources.bebidasFactura;
-            this.btnBebidas.Location = new System.Drawing.Point(292, 245);
-            this.btnBebidas.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBebidas.Name = "btnBebidas";
-            this.btnBebidas.Size = new System.Drawing.Size(260, 231);
-            this.btnBebidas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnBebidas.TabIndex = 3;
-            this.btnBebidas.TabStop = false;
-            this.btnBebidas.Click += new System.EventHandler(this.btnBebidas_Click);
+            this.btnRegresar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnRegresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.ForeColor = System.Drawing.Color.White;
+            this.btnRegresar.Location = new System.Drawing.Point(26, 730);
+            this.btnRegresar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(200, 84);
+            this.btnRegresar.TabIndex = 19;
+            this.btnRegresar.Text = "REGRESAR";
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.Firebrick;
+            this.btnCancelar.Font = new System.Drawing.Font("Berlin Sans FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(681, 687);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(257, 127);
+            this.btnCancelar.TabIndex = 20;
+            this.btnCancelar.Text = "BORRAR ORDEN";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Berlin Sans FB", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(896, 610);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(138, 44);
+            this.lblTotal.TabIndex = 29;
+            this.lblTotal.Text = "TOTAL";
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Font = new System.Drawing.Font("Berlin Sans FB", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.Location = new System.Drawing.Point(1055, 607);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
+            this.txtTotal.Size = new System.Drawing.Size(214, 51);
+            this.txtTotal.TabIndex = 30;
+            // 
+            // btnEliminarItem
+            // 
+            this.btnEliminarItem.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnEliminarItem.Font = new System.Drawing.Font("Berlin Sans FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarItem.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarItem.Location = new System.Drawing.Point(504, 705);
+            this.btnEliminarItem.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminarItem.Name = "btnEliminarItem";
+            this.btnEliminarItem.Size = new System.Drawing.Size(136, 109);
+            this.btnEliminarItem.TabIndex = 31;
+            this.btnEliminarItem.Text = "eliminar Item";
+            this.btnEliminarItem.UseVisualStyleBackColor = false;
+            this.btnEliminarItem.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmOrden
             // 
+            this.AcceptButton = this.btnFacturar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(1292, 827);
             this.Controls.Add(this.btnEliminarItem);
             this.Controls.Add(this.txtTotal);
@@ -978,30 +981,11 @@
             this.Text = "frmFacturacion";
             this.Load += new System.EventHandler(this.frmFacturacion_Load);
             this.pnlMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnEnsalada)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnWrap)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnParfait)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBebidas)).EndInit();
             this.pnlEnsaladas.ResumeLayout(false);
-            this.pnlBebidas.ResumeLayout(false);
-            this.pnlBebidas.PerformLayout();
-            this.pnlWraps.ResumeLayout(false);
-            this.pnlParfaits.ResumeLayout(false);
-            this.pnlParfaits.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrden)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCola)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTeDurazno)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTeLimon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPinkLimonade)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLimonada)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAguaConGas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAgua)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picGreengourt)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMaracuya)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picFrutosRojos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCompleto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWrapGreenGriega)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWrapGreenMar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWrapGreenCesar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWrapGreenAmericano)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWrapGreenVegano)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWrapGreenCriollo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGreenVeraniega)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGreenTulipan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGreenCapres)).EndInit();
@@ -1009,10 +993,29 @@
             ((System.ComponentModel.ISupportInitialize)(this.picGreenColeslaw)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGreenRusa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGreenGriega)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEnsalada)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnWrap)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnParfait)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBebidas)).EndInit();
+            this.pnlBebidas.ResumeLayout(false);
+            this.pnlBebidas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCola)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTeDurazno)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTeLimon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPinkLimonade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLimonada)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAguaConGas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAgua)).EndInit();
+            this.pnlWraps.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picWrapGreenGriega)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWrapGreenMar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWrapGreenCesar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWrapGreenAmericano)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWrapGreenVegano)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWrapGreenCriollo)).EndInit();
+            this.pnlParfaits.ResumeLayout(false);
+            this.pnlParfaits.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picGreengourt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMaracuya)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFrutosRojos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCompleto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrden)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

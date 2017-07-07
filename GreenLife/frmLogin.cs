@@ -63,7 +63,7 @@ namespace GreenLife
                 int rol = temp[0].Rol;
                 MessageBox.Show("GREEN LIFE", "BIENVENIDO");
                 this.Hide();
-                frmPrincipal principal = new frmPrincipal(txtUsuario.Text, rol);
+                frmMenuPrincipal principal = new frmMenuPrincipal(txtUsuario.Text, rol);
                 principal.Show();
             }
            

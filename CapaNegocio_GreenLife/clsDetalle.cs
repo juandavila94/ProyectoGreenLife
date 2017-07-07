@@ -12,6 +12,12 @@ namespace CapaNegocio_GreenLife
 
         private int idDetalle;
 
+        public clsDetalle(int idPlato,int cantidad, decimal precio){
+            IdPlato = idPlato;
+            Cantidad = cantidad;
+            Precio = precio;
+            }
+
         public int IdDetalle
         {
             get { return idDetalle; }

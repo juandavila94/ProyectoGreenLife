@@ -124,11 +124,11 @@
   <data name="iconoEnsalada" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconoEnsalada.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Green griega" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Green griega.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="con gas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\con gas.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="wrap del mar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wrap del mar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="picEfectivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\picEfectivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Parfait2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Parfait2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,6 +148,9 @@
   <data name="green capres" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\green capres.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Green griega" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Green griega.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icoFacturar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icoFacturar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -156,6 +159,9 @@
   </data>
   <data name="limonada1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\limonada1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="parfaitFactura" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\parfaitFactura.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="greengourt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\greengourt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,8 +172,8 @@
   <data name="logo3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pink limonada1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pink limonada1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icoAnular" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icoAnular.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="wrap" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wrap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,20 +181,20 @@
   <data name="agua con gas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\agua con gas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="con gas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\con gas.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Green Americano" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Green Americano.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="te de durazno" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\te de durazno.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wrap cesar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wrap cesar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="durazno-remedios-caseros-propiedades-medicina-L-vifaeg1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\durazno-remedios-caseros-propiedades-medicina-L-vifaeg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="wrap vegano" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wrap vegano.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="wrap cesar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wrap cesar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Green Americano" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Green Americano.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ensaladaFactura" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ensaladaFactura.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -217,11 +223,11 @@
   <data name="sodas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sodas.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Parfait1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Parfait1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Green Coleslaw" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Green Coleslaw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="picTarjeta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\picTarjeta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Cesar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cesar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -229,8 +235,8 @@
   <data name="Agua" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Agua.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="wrap cesar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wrap cesar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pink limonada1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pink limonada1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Parfait" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Parfait.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -247,28 +253,31 @@
   <data name="te de limon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\te de limon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icoSalir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icoSalir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Agua1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Agua1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icoAnular" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icoAnular.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="wrap cesar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wrap cesar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="caja" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\caja.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="durazno-remedios-caseros-propiedades-medicina-L-vifaeg1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\durazno-remedios-caseros-propiedades-medicina-L-vifaeg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="wrap del mar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wrap del mar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="wrap griega" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wrap griega.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="parfaitFactura" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\parfaitFactura.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Parfait1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Parfait1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="durazno-remedios-caseros-propiedades-medicina-L-vifaeg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\durazno-remedios-caseros-propiedades-medicina-L-vifaeg.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icoSalir" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icoSalir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="picTarjeta1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\picTarjeta1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

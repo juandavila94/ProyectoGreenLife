@@ -71,6 +71,18 @@
     <Compile Include="frmLeerOrden.Designer.cs">
       <DependentUpon>frmLeerOrden.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInicio.Designer.cs">
+      <DependentUpon>frmInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMetodoPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMetodoPago.Designer.cs">
+      <DependentUpon>frmMetodoPago.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmOrden.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,11 +95,11 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPrincipal.cs">
+    <Compile Include="frmMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPrincipal.Designer.cs">
-      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    <Compile Include="frmMenuPrincipal.Designer.cs">
+      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="frmReportes.cs">
       <SubType>Form</SubType>
@@ -109,14 +121,20 @@
     <EmbeddedResource Include="frmLeerOrden.resx">
       <DependentUpon>frmLeerOrden.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmInicio.resx">
+      <DependentUpon>frmInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMetodoPago.resx">
+      <DependentUpon>frmMetodoPago.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmOrden.resx">
       <DependentUpon>frmOrden.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPrincipal.resx">
-      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="frmMenuPrincipal.resx">
+      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmReportes.resx">
       <DependentUpon>frmReportes.cs</DependentUpon>
@@ -307,6 +325,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icoSalir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picEfectivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picTarjeta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picTarjeta1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

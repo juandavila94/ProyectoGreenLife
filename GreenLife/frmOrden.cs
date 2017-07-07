@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaNegocio_GreenLife;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,7 +17,20 @@ namespace GreenLife
         {
             InitializeComponent();
         }
-
+        private static frmOrden m_FormDefInstance;
+        public static frmOrden DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new frmOrden();
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
@@ -94,6 +108,8 @@ namespace GreenLife
                 txtTotal.Text = "$= " + decTotal.ToString();
             }
         }
+
+
         private void btnEnsalada_Click(object sender, EventArgs e)
         {
             pnlMenu.Visible = false;
@@ -885,6 +901,51 @@ namespace GreenLife
                     dgvOrden.Rows.RemoveAt(celdaSeleccionada.RowIndex);
             }
             CalcularTotal();
+        }
+        public DataTable GetDataTableFromDGV(DataGridView dgv)
+        {
+            var dt = new DataTable();
+            foreach (DataGridViewColumn columnaOrden in dgv.Columns)
+            {
+                if (columnaOrden.Visible)
+                {
+                    DataColumn columnaAEnviar;
+                    columnaAEnviar = new DataColumn();
+                    columnaAEnviar.ColumnName = columnaOrden.HeaderText;
+                    columnaAEnviar.DataType = columnaOrden.ValueType;
+                    
+                    dt.Columns.Add(columnaAEnviar);
+                }
+            }
+
+            object[] cellValues = new object[dgv.Columns.Count];
+            foreach (DataGridViewRow row in dgv.Rows)
+            {
+                for (int i = 0; i < row.Cells.Count; i++)
+                {
+                    cellValues[i] = row.Cells[i].Value;
+                }
+                dt.Rows.Add(cellValues);
+            }
+
+            return dt;
+        }
+        private void btnFacturar_Click(object sender, EventArgs e)
+        {
+            if (dgvOrden.RowCount == 0)
+                MessageBox.Show("LA ORDEN ESTA VACIA");
+
+
+            List<clsDetalle> ListaDetalles = new List<clsDetalle>();
+            foreach (DataGridViewRow row in dgvOrden.Rows)
+            {
+                clsDetalle detalle = new clsDetalle(Convert.ToInt32(row.Cells[0].Value), Convert.ToInt32(row.Cells[2].Value), Convert.ToDecimal(row.Cells[3].Value));
+                ListaDetalles.Add(detalle);
+            }
+            
+            frmLeerOrden leerOrden = new frmLeerOrden(GetDataTableFromDGV(dgvOrden),txtTotal.Text);
+            leerOrden.Show();
+
         }
     }
 }
