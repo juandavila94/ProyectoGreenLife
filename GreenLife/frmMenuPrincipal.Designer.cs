@@ -91,6 +91,7 @@
             this.sALIRToolStripMenuItem1.Name = "sALIRToolStripMenuItem1";
             this.sALIRToolStripMenuItem1.Size = new System.Drawing.Size(120, 45);
             this.sALIRToolStripMenuItem1.Text = "SALIR";
+            this.sALIRToolStripMenuItem1.Click += new System.EventHandler(this.sALIRToolStripMenuItem1_Click);
             // 
             // reporteToolStripMenuItem
             // 

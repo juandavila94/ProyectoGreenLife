@@ -59,11 +59,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAgregarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregarCliente.Designer.cs">
+      <DependentUpon>frmAgregarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCliente.Designer.cs">
       <DependentUpon>frmCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsumidorOFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsumidorOFactura.Designer.cs">
+      <DependentUpon>frmConsumidorOFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDatosFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDatosFactura.Designer.cs">
+      <DependentUpon>frmDatosFactura.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLeerOrden.cs">
       <SubType>Form</SubType>
@@ -115,8 +133,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAgregarCliente.resx">
+      <DependentUpon>frmAgregarCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCliente.resx">
       <DependentUpon>frmCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsumidorOFactura.resx">
+      <DependentUpon>frmConsumidorOFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDatosFactura.resx">
+      <DependentUpon>frmDatosFactura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLeerOrden.resx">
       <DependentUpon>frmLeerOrden.cs</DependentUpon>
@@ -334,6 +361,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\picTarjeta1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picConsumidorFinal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\factura.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guardar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crearCliente.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

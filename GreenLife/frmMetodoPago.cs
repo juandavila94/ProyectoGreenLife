@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaNegocio_GreenLife;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,7 +12,7 @@ namespace GreenLife
 {
     public partial class frmMetodoPago : Form
     {
-        public frmMetodoPago()
+        public frmMetodoPago(List<clsDetalle> ListaDeDetalles, decimal totalFactura)
         {
             InitializeComponent();
         }
@@ -19,6 +20,11 @@ namespace GreenLife
         private void frmMetodoPago_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

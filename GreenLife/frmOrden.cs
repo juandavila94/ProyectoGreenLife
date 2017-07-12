@@ -105,7 +105,7 @@ namespace GreenLife
                     decTotal += (Convert.ToDecimal(row.Cells[3].Value));
 
                 }
-                txtTotal.Text = "$= " + decTotal.ToString();
+                txtTotal.Text =  decTotal.ToString();
             }
         }
 
@@ -934,18 +934,19 @@ namespace GreenLife
         {
             if (dgvOrden.RowCount == 0)
                 MessageBox.Show("LA ORDEN ESTA VACIA");
-
-
-            List<clsDetalle> ListaDetalles = new List<clsDetalle>();
-            foreach (DataGridViewRow row in dgvOrden.Rows)
+            else
             {
-                clsDetalle detalle = new clsDetalle(Convert.ToInt32(row.Cells[0].Value), Convert.ToInt32(row.Cells[2].Value), Convert.ToDecimal(row.Cells[3].Value));
-                ListaDetalles.Add(detalle);
-            }
-            
-            frmLeerOrden leerOrden = new frmLeerOrden(GetDataTableFromDGV(dgvOrden),txtTotal.Text);
-            leerOrden.Show();
 
+                List<clsDetalle> ListaDetalles = new List<clsDetalle>();
+                foreach (DataGridViewRow row in dgvOrden.Rows)
+                {
+                    clsDetalle detalle = new clsDetalle(Convert.ToInt32(row.Cells[0].Value), Convert.ToInt32(row.Cells[2].Value), Convert.ToDecimal(row.Cells[3].Value));
+                    ListaDetalles.Add(detalle);
+                }
+
+                frmLeerOrden leerOrden = new frmLeerOrden(GetDataTableFromDGV(dgvOrden), txtTotal.Text, ListaDetalles);
+                leerOrden.ShowDialog();
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaNegocio_GreenLife;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,13 +13,16 @@ namespace GreenLife
     public partial class frmLeerOrden : Form
     {
         private int caseSwitch = 0;
-        public frmLeerOrden(object dataSource,string total)
+        private decimal totalFactura=0;
+        private List<clsDetalle> ListaDeDetalles;
+        public frmLeerOrden(object dataSource,string total, List<clsDetalle> ListaDetalles)
         {
             InitializeComponent();
             dgvLeerOrden.DataSource = dataSource;
-            lblTotal.Text = "TOTAL = $" + total;
+            lblTotal.Text = "TOTAL = " + total;
             dgvLeerOrden.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells; ;
-         
+            totalFactura = Convert.ToDecimal(total);
+            ListaDeDetalles = ListaDetalles;
 
         }
 
@@ -75,8 +79,8 @@ namespace GreenLife
 
         private void btnFacturar_Click(object sender, EventArgs e)
         {
-            frmMetodoPago leerOrden = new frmMetodoPago();
-            leerOrden.Show();
+            frmConsumidorOFactura frmCF = new frmConsumidorOFactura(ListaDeDetalles,totalFactura);
+            frmCF.ShowDialog();
             this.Dispose();
         }
     }

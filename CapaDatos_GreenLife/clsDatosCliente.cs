@@ -43,7 +43,7 @@ namespace CapaDatos_GreenLife
 
         public object ConsultarClientesPorNombre(string nombre)
         {
-            return bd.spConsultarUsuarioPorNombre(nombre).ToList();
+            return bd.spConsultarClientesPorNombre(nombre).ToList();
         }
 
         public object ConsultarClientesPorCedula(string cedula)

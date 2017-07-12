@@ -36,5 +36,12 @@ namespace GreenLife
             frmInicio.DefInstance.MdiParent = this;
             frmInicio.DefInstance.Show(); 
         }
+
+        private void sALIRToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmLogin login = new frmLogin();
+            login.Show();
+            this.Dispose();
+        }
     }
 }
