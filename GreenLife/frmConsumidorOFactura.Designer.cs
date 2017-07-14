@@ -41,37 +41,38 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Berlin Sans FB Demi", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(91, 182);
+            this.label2.Font = new System.Drawing.Font("Berlin Sans FB Demi", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(88, 126);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(332, 38);
+            this.label2.Size = new System.Drawing.Size(358, 112);
             this.label2.TabIndex = 9;
-            this.label2.Text = "CONSUMIDOR FINAL";
+            this.label2.Text = "CONSUMIDOR \r\nFINAL";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Berlin Sans FB Demi", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(588, 182);
+            this.label1.Font = new System.Drawing.Font("Berlin Sans FB Demi", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(546, 154);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 38);
+            this.label1.Size = new System.Drawing.Size(265, 62);
             this.label1.TabIndex = 8;
             this.label1.Text = "FACTURA";
             // 
             // lblIndicacion
             // 
             this.lblIndicacion.AutoSize = true;
-            this.lblIndicacion.Font = new System.Drawing.Font("Berlin Sans FB Demi", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIndicacion.Location = new System.Drawing.Point(188, 36);
+            this.lblIndicacion.Font = new System.Drawing.Font("Berlin Sans FB Demi", 33F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIndicacion.Location = new System.Drawing.Point(28, 42);
             this.lblIndicacion.Name = "lblIndicacion";
-            this.lblIndicacion.Size = new System.Drawing.Size(541, 38);
+            this.lblIndicacion.Size = new System.Drawing.Size(892, 62);
             this.lblIndicacion.TabIndex = 7;
             this.lblIndicacion.Text = "ESCOJA EL TIPO DE FACTURACIÓN";
             // 
             // picFactura
             // 
             this.picFactura.Image = global::GreenLife.Properties.Resources.factura;
-            this.picFactura.Location = new System.Drawing.Point(489, 237);
+            this.picFactura.Location = new System.Drawing.Point(496, 237);
             this.picFactura.Name = "picFactura";
             this.picFactura.Size = new System.Drawing.Size(367, 271);
             this.picFactura.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -82,7 +83,7 @@
             // picCF
             // 
             this.picCF.Image = global::GreenLife.Properties.Resources.picConsumidorFinal;
-            this.picCF.Location = new System.Drawing.Point(77, 228);
+            this.picCF.Location = new System.Drawing.Point(80, 241);
             this.picCF.Name = "picCF";
             this.picCF.Size = new System.Drawing.Size(357, 280);
             this.picCF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -96,10 +97,10 @@
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.Font = new System.Drawing.Font("Berlin Sans FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(346, 611);
+            this.btnCancelar.Location = new System.Drawing.Point(334, 577);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(241, 74);
+            this.btnCancelar.Size = new System.Drawing.Size(281, 100);
             this.btnCancelar.TabIndex = 22;
             this.btnCancelar.Text = "VOLVER";
             this.btnCancelar.UseVisualStyleBackColor = false;

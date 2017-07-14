@@ -93,12 +93,34 @@ namespace GreenLife
         {
             frmAgregarCliente frmAC = new frmAgregarCliente();
             frmAC.ShowDialog();
-            this.Dispose();
+        
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void btnFacturar_Click(object sender, EventArgs e)
+        {
+            using (var form = new frmMetodoPago(ListaDeDetalles, totalFactura))
+            {
+                var result = form.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    this.DialogResult = DialogResult.OK;
+                }
+            }
+
+            this.Dispose();
+
+        
+        }
+
+        private void btnBuscarCliente_Click(object sender, EventArgs e)
+        {
+            dgvClientes.DataSource = cliente1.consultarClientesPorCedula(mskCedula.Text);
+            this.DialogResult = DialogResult.None;
         }
     }
 }

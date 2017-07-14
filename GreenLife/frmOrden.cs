@@ -943,9 +943,19 @@ namespace GreenLife
                     clsDetalle detalle = new clsDetalle(Convert.ToInt32(row.Cells[0].Value), Convert.ToInt32(row.Cells[2].Value), Convert.ToDecimal(row.Cells[3].Value));
                     ListaDetalles.Add(detalle);
                 }
-
-                frmLeerOrden leerOrden = new frmLeerOrden(GetDataTableFromDGV(dgvOrden), txtTotal.Text, ListaDetalles);
-                leerOrden.ShowDialog();
+                using (var form = new frmLeerOrden(GetDataTableFromDGV(dgvOrden), txtTotal.Text, ListaDetalles))
+                {
+                    var result = form.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        dgvOrden.Rows.Clear();
+                        CalcularTotal();
+                        txtTotal.Text = string.Empty;
+                    }
+                }
+                //frmLeerOrden leerOrden = new frmLeerOrden(GetDataTableFromDGV(dgvOrden), txtTotal.Text, ListaDetalles);
+                //leerOrden.ShowDialog();
+               
             }
         }
     }
