@@ -15,6 +15,9 @@ namespace GreenLife
         private int caseSwitch = 0;
         private decimal totalFactura=0;
         private List<clsDetalle> ListaDeDetalles;
+        
+        
+
         public frmLeerOrden(object dataSource,string total, List<clsDetalle> ListaDetalles)
         {
             InitializeComponent();
@@ -74,13 +77,21 @@ namespace GreenLife
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+          
             this.Dispose();
         }
 
         private void btnFacturar_Click(object sender, EventArgs e)
         {
-            frmConsumidorOFactura frmCF = new frmConsumidorOFactura(ListaDeDetalles,totalFactura);
-            frmCF.ShowDialog();
+            using (var form = new frmConsumidorOFactura(ListaDeDetalles, totalFactura))
+            {
+                var result = form.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    this.DialogResult = DialogResult.OK;
+                }
+            }
+           
             this.Dispose();
         }
     }

@@ -28,15 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.picTarjeta = new System.Windows.Forms.PictureBox();
-            this.picEfectivo = new System.Windows.Forms.PictureBox();
             this.lblIndicacion = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.picTarjeta = new System.Windows.Forms.PictureBox();
+            this.picEfectivo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picTarjeta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEfectivo)).BeginInit();
             this.SuspendLayout();
+            // 
+            // lblIndicacion
+            // 
+            this.lblIndicacion.AutoSize = true;
+            this.lblIndicacion.Font = new System.Drawing.Font("Berlin Sans FB Demi", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIndicacion.Location = new System.Drawing.Point(58, 9);
+            this.lblIndicacion.Name = "lblIndicacion";
+            this.lblIndicacion.Size = new System.Drawing.Size(851, 68);
+            this.lblIndicacion.TabIndex = 2;
+            this.lblIndicacion.Text = "ESCOJA EL METODO DE PAGO";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Berlin Sans FB Demi", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(545, 119);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(269, 68);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "TARJETA";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Berlin Sans FB Demi", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(114, 119);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(302, 68);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "EFECTIVO";
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.Firebrick;
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancelar.Font = new System.Drawing.Font("Berlin Sans FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(352, 601);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(278, 105);
+            this.btnCancelar.TabIndex = 23;
+            this.btnCancelar.Text = "VOLVER";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // picTarjeta
             // 
@@ -57,51 +102,7 @@
             this.picEfectivo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picEfectivo.TabIndex = 0;
             this.picEfectivo.TabStop = false;
-            // 
-            // lblIndicacion
-            // 
-            this.lblIndicacion.AutoSize = true;
-            this.lblIndicacion.Font = new System.Drawing.Font("Berlin Sans FB Demi", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIndicacion.Location = new System.Drawing.Point(233, 24);
-            this.lblIndicacion.Name = "lblIndicacion";
-            this.lblIndicacion.Size = new System.Drawing.Size(470, 38);
-            this.lblIndicacion.TabIndex = 2;
-            this.lblIndicacion.Text = "ESCOJA EL METODO DE PAGO";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Berlin Sans FB Demi", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(606, 157);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 38);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "TARJETA";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Berlin Sans FB Demi", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(192, 157);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(169, 38);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "EFECTIVO";
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.Color.Firebrick;
-            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Font = new System.Drawing.Font("Berlin Sans FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(352, 632);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(241, 74);
-            this.btnCancelar.TabIndex = 23;
-            this.btnCancelar.Text = "VOLVER";
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.picEfectivo.Click += new System.EventHandler(this.picEfectivo_Click);
             // 
             // frmMetodoPago
             // 

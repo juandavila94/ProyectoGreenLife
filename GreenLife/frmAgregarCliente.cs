@@ -23,13 +23,13 @@ namespace GreenLife
             try
             {
                 cliente1.insertarCliente(mskCedula.Text, mskNombre.Text, mskDireccion.Text, mskTelefono.Text);
+                this.Dispose();
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.ToString());
-            
+                MessageBox.Show("Error al ingresar el cliente, verifique los datos");            
             }
-            this.Dispose();
+            
 
         }
 
