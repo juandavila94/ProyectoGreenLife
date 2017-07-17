@@ -33,8 +33,8 @@
             this.mskTotal = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnGuardar = new System.Windows.Forms.PictureBox();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,13 +42,12 @@
             // 
             this.mskEfectivo.Font = new System.Drawing.Font("Berlin Sans FB", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mskEfectivo.Location = new System.Drawing.Point(480, 278);
-            this.mskEfectivo.Mask = "999.99";
             this.mskEfectivo.Name = "mskEfectivo";
-            this.mskEfectivo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.mskEfectivo.Size = new System.Drawing.Size(260, 73);
             this.mskEfectivo.TabIndex = 46;
             this.mskEfectivo.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mskEfectivo_MaskInputRejected);
             this.mskEfectivo.TextChanged += new System.EventHandler(this.mskEfectivo_TextChanged);
+            this.mskEfectivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mskEfectivo_KeyPress);
             // 
             // label2
             // 
@@ -59,6 +58,7 @@
             this.label2.Size = new System.Drawing.Size(241, 66);
             this.label2.TabIndex = 48;
             this.label2.Text = "EFectivo";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // mskTotal
             // 
@@ -68,6 +68,7 @@
             this.mskTotal.ReadOnly = true;
             this.mskTotal.Size = new System.Drawing.Size(260, 73);
             this.mskTotal.TabIndex = 47;
+            this.mskTotal.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mskTotal_MaskInputRejected);
             // 
             // label1
             // 
@@ -78,6 +79,7 @@
             this.label1.Size = new System.Drawing.Size(157, 66);
             this.label1.TabIndex = 46;
             this.label1.Text = "Total";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label3
             // 
@@ -88,17 +90,7 @@
             this.label3.Size = new System.Drawing.Size(877, 66);
             this.label3.TabIndex = 53;
             this.label3.Text = "INGRESE EL EFECTIVO RECIBIDO";
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Image = global::GreenLife.Properties.Resources.print;
-            this.btnGuardar.Location = new System.Drawing.Point(257, 461);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(413, 108);
-            this.btnGuardar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnGuardar.TabIndex = 52;
-            this.btnGuardar.TabStop = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // btnCancelar
             // 
@@ -114,6 +106,17 @@
             this.btnCancelar.Text = "VOLVER";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Image = global::GreenLife.Properties.Resources.print;
+            this.btnGuardar.Location = new System.Drawing.Point(257, 461);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(413, 108);
+            this.btnGuardar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnGuardar.TabIndex = 52;
+            this.btnGuardar.TabStop = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // frmCambio
             // 

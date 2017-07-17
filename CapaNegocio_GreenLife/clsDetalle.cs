@@ -18,6 +18,10 @@ namespace CapaNegocio_GreenLife
             Precio = precio;
             }
 
+        public clsDetalle()
+        {
+        }
+
         public int IdDetalle
         {
             get { return idDetalle; }

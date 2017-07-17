@@ -35,5 +35,15 @@ namespace GreenLife
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+
+        private void lblIndicacion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -15,7 +15,7 @@ namespace GreenLife
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmOrden());
+            Application.Run(new frmLogin());
         }
     }
 }

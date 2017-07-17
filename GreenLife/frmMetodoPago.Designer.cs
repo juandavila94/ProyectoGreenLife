@@ -92,6 +92,7 @@
             this.picTarjeta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picTarjeta.TabIndex = 1;
             this.picTarjeta.TabStop = false;
+            this.picTarjeta.Click += new System.EventHandler(this.picTarjeta_Click);
             // 
             // picEfectivo
             // 

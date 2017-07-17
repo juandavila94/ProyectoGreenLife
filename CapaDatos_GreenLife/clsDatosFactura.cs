@@ -14,6 +14,7 @@ namespace CapaDatos_GreenLife
             {
                 var courseList = bd.spInsertarFactura( idUsuario,  idCliente,  fecha,  metodoDePago,  subtotal,  iva,  total,true);
                 bd.SaveChanges();
+
             }
         }
 
@@ -45,6 +46,17 @@ namespace CapaDatos_GreenLife
         public object ConsultarFacturasPorUsuario(int id)
         {
             return bd.spConsultarFacturasPorUsuario(id).ToList();
+        }
+
+        public int ConsultarUltimoIDFactura()
+        {
+            List<int> lista = new List<int>();
+
+            foreach (int i in bd.spConsultarUltimoIDFactura().ToList())
+            {
+                lista.Add(i);
+            }
+            return lista[0];
         }
     }
 }

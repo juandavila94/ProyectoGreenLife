@@ -33,7 +33,8 @@ namespace GreenLife
 
         private void picEfectivo_Click(object sender, EventArgs e)
         {
-            using (var form = new frmCambio(ListaDeDetalles, totalFactura))
+            
+            using (var form = new frmCambio(ListaDeDetalles, totalFactura,"efectivo"))
             {
                 var result = form.ShowDialog();
                 if (result == DialogResult.OK)
@@ -47,6 +48,20 @@ namespace GreenLife
 
             
             
+        }
+
+        private void picTarjeta_Click(object sender, EventArgs e)
+        {
+            using (var form = new frmTarjeta(ListaDeDetalles, totalFactura, "tarjeta"))
+            {
+                var result = form.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    this.DialogResult = DialogResult.OK;
+                }
+            }
+
+            this.Dispose();
         }
     }
 }

@@ -32,6 +32,7 @@ namespace GreenLife
             dgvClientes.Columns[1].Width = 100;
             dgvClientes.Columns[2].Width = 200;
             dgvClientes.ClearSelection(); 
+            mskID.Text=String.Empty;
             mskCedula.Text = String.Empty;
             mskNombre.Text = String.Empty;
             mskDireccion.Text =  String.Empty;
@@ -51,6 +52,7 @@ namespace GreenLife
 
                 int selectedrowindex = dgvClientes.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dgvClientes.Rows[selectedrowindex];
+                mskID.Text= Convert.ToString(selectedRow.Cells["idCliente"].Value);
                 mskCedula.Text = Convert.ToString(selectedRow.Cells["cedula"].Value);
                 mskNombre.Text = Convert.ToString(selectedRow.Cells["nombre"].Value);
                 mskDireccion.Text = Convert.ToString(selectedRow.Cells["direccion"].Value);
@@ -103,18 +105,24 @@ namespace GreenLife
 
         private void btnFacturar_Click(object sender, EventArgs e)
         {
-            using (var form = new frmMetodoPago(ListaDeDetalles, totalFactura))
+           
+            if (mskNombre.Text != string.Empty)
             {
-                var result = form.ShowDialog();
-                if (result == DialogResult.OK)
+                using (var form = new frmMetodoPago(ListaDeDetalles, totalFactura))
                 {
-                    this.DialogResult = DialogResult.OK;
+                    Global.IdCliente = Convert.ToInt32(mskID.Text);
+                    var result = form.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        this.DialogResult = DialogResult.OK;
+                    }
                 }
+                
+                this.Dispose();
+
             }
-
-            this.Dispose();
-
-        
+            else
+                MessageBox.Show("ESCOGA UN CLIENTE O AGREGUE UNO NUEVO");
         }
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)

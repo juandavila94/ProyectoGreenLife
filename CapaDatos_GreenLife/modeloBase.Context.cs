@@ -400,5 +400,10 @@ namespace CapaDatos_GreenLife
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spModificarUsuario", idUsuarioParameter, usuarioParameter, passwordParameter, nombreParameter, rolParameter);
         }
+    
+        public virtual ObjectResult<Nullable<decimal>> spConsultarUltimoIDFactura()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("spConsultarUltimoIDFactura");
+        }
     }
 }

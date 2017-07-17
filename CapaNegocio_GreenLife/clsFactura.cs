@@ -152,6 +152,18 @@ namespace CapaNegocio_GreenLife
             {
                 throw ex;
             }
+
+        }
+              public int consultarUltimoIDFactura ()
+            {
+            try
+            {
+                return objDatosFactura.ConsultarUltimoIDFactura();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

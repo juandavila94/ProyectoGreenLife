@@ -61,6 +61,7 @@ namespace GreenLife
             }
             else {
                 int rol = temp[0].Rol;
+                Global.IdUsuario = temp[0].IdUsuario;
                 MessageBox.Show("GREEN LIFE", "BIENVENIDO");
                 this.Hide();
                 frmMenuPrincipal principal = new frmMenuPrincipal(txtUsuario.Text, rol);

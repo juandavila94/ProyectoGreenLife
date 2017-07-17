@@ -45,7 +45,7 @@
           </Key>
           <Property Name="idPlato" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="precio" Type="decimal" Precision="20" Scale="15" Nullable="false" />
+          <Property Name="precio" Type="decimal" Precision="5" Scale="2" Nullable="false" />
           <Property Name="tipo" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="foto" Type="image" />
         </EntityType>
@@ -146,6 +146,7 @@
           <Parameter Name="fecha" Type="date" Mode="In" />
           <Parameter Name="metodoPago" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="spConsultarUltimoIDFactura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="spConsultarUsuarioPorNombre" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="nombre" Type="varchar" Mode="In" />
         </Function>
@@ -290,7 +291,7 @@
           </Key>
           <Property Name="idPlato" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="precio" Type="Decimal" Precision="20" Scale="15" Nullable="false" />
+          <Property Name="precio" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
           <Property Name="tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="foto" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Detalle" Relationship="Self.FK_Detalle_Plato" FromRole="Plato" ToRole="Detalle" />
@@ -486,6 +487,7 @@
             <Parameter Name="nombre" Mode="In" Type="String" />
             <Parameter Name="rol" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="spConsultarUltimoIDFactura" ReturnType="Collection(Decimal)" />
         </EntityContainer>
         <ComplexType Name="spConsultarClientes_Result">
           <Property Type="Int32" Name="idCliente" Nullable="false" />
@@ -808,6 +810,7 @@
           <FunctionImportMapping FunctionImportName="spModificarCliente" FunctionName="GreenlifeModel.Store.spModificarCliente" />
           <FunctionImportMapping FunctionImportName="spModificarPlato" FunctionName="GreenlifeModel.Store.spModificarPlato" />
           <FunctionImportMapping FunctionImportName="spModificarUsuario" FunctionName="GreenlifeModel.Store.spModificarUsuario" />
+          <FunctionImportMapping FunctionImportName="spConsultarUltimoIDFactura" FunctionName="GreenlifeModel.Store.spConsultarUltimoIDFactura" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

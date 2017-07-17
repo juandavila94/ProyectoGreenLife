@@ -47,6 +47,8 @@
             this.txtFiltroNombre = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.mskID = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -56,7 +58,7 @@
             // 
             this.lblCedula.AutoSize = true;
             this.lblCedula.Font = new System.Drawing.Font("Berlin Sans FB", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCedula.Location = new System.Drawing.Point(66, 33);
+            this.lblCedula.Location = new System.Drawing.Point(66, 48);
             this.lblCedula.Name = "lblCedula";
             this.lblCedula.Size = new System.Drawing.Size(104, 33);
             this.lblCedula.TabIndex = 31;
@@ -65,14 +67,16 @@
             // mskCedula
             // 
             this.mskCedula.Font = new System.Drawing.Font("Berlin Sans FB", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskCedula.Location = new System.Drawing.Point(201, 33);
-            this.mskCedula.Mask = "00000000000";
+            this.mskCedula.Location = new System.Drawing.Point(201, 41);
+            this.mskCedula.Mask = "0000000000";
             this.mskCedula.Name = "mskCedula";
-            this.mskCedula.Size = new System.Drawing.Size(152, 40);
+            this.mskCedula.Size = new System.Drawing.Size(175, 40);
             this.mskCedula.TabIndex = 33;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.mskID);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.mskTelefono);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.mskDireccion);
@@ -87,7 +91,7 @@
             // mskTelefono
             // 
             this.mskTelefono.Font = new System.Drawing.Font("Berlin Sans FB", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskTelefono.Location = new System.Drawing.Point(166, 249);
+            this.mskTelefono.Location = new System.Drawing.Point(166, 326);
             this.mskTelefono.Name = "mskTelefono";
             this.mskTelefono.ReadOnly = true;
             this.mskTelefono.Size = new System.Drawing.Size(260, 40);
@@ -97,7 +101,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Berlin Sans FB", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(18, 249);
+            this.label3.Location = new System.Drawing.Point(18, 326);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(119, 33);
             this.label3.TabIndex = 40;
@@ -106,7 +110,7 @@
             // mskDireccion
             // 
             this.mskDireccion.Font = new System.Drawing.Font("Berlin Sans FB", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskDireccion.Location = new System.Drawing.Point(166, 157);
+            this.mskDireccion.Location = new System.Drawing.Point(166, 234);
             this.mskDireccion.Name = "mskDireccion";
             this.mskDireccion.ReadOnly = true;
             this.mskDireccion.Size = new System.Drawing.Size(260, 40);
@@ -116,7 +120,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Berlin Sans FB", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(18, 160);
+            this.label2.Location = new System.Drawing.Point(18, 237);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(126, 33);
             this.label2.TabIndex = 38;
@@ -125,7 +129,7 @@
             // mskNombre
             // 
             this.mskNombre.Font = new System.Drawing.Font("Berlin Sans FB", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskNombre.Location = new System.Drawing.Point(166, 66);
+            this.mskNombre.Location = new System.Drawing.Point(166, 143);
             this.mskNombre.Name = "mskNombre";
             this.mskNombre.ReadOnly = true;
             this.mskNombre.Size = new System.Drawing.Size(260, 40);
@@ -135,7 +139,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Berlin Sans FB", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(18, 69);
+            this.label1.Location = new System.Drawing.Point(18, 146);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 33);
             this.label1.TabIndex = 36;
@@ -239,12 +243,32 @@
             this.btnBuscarCliente.BackgroundImage = global::GreenLife.Properties.Resources.buscar;
             this.btnBuscarCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscarCliente.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(382, 27);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(382, 35);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(127, 46);
             this.btnBuscarCliente.TabIndex = 46;
             this.btnBuscarCliente.UseVisualStyleBackColor = true;
             this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Berlin Sans FB", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(93, 70);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(42, 33);
+            this.label5.TabIndex = 42;
+            this.label5.Text = "ID";
+            // 
+            // mskID
+            // 
+            this.mskID.Font = new System.Drawing.Font("Berlin Sans FB", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mskID.Location = new System.Drawing.Point(166, 63);
+            this.mskID.Name = "mskID";
+            this.mskID.ReadOnly = true;
+            this.mskID.Size = new System.Drawing.Size(260, 40);
+            this.mskID.TabIndex = 43;
+            this.mskID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // frmDatosFactura
             // 
@@ -294,5 +318,7 @@
         private System.Windows.Forms.TextBox txtFiltroNombre;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnBuscarCliente;
+        private System.Windows.Forms.MaskedTextBox mskID;
+        private System.Windows.Forms.Label label5;
     }
 }

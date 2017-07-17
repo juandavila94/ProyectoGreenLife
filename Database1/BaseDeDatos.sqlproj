@@ -98,6 +98,7 @@
     <Build Include="dbo\Stored Procedures\spModificarUsuario.sql" />
     <Build Include="dbo\Stored Procedures\spAnularFactura.sql" />
     <Build Include="dbo\Stored Procedures\spLogin.sql" />
+    <Build Include="dbo\Stored Procedures\spConsultarUltimoIDFactura.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\InsercionesPlatos.sql" />
